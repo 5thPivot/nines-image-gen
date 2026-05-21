@@ -1,0 +1,48 @@
+# Glossary
+
+Vocabulary the image gen team drops without defining. Update as new terms surface in syncs.
+
+## Models / tools in active use
+
+- **JAR/SCREAM model** — Object-detection + mask-generation model Aaron uses to identify regions for inpainting. Not a brand name we recognize — could be a fine-tuned variant; double-check spelling with Aaron when we shadow.
+- **OpenAI (inpainting)** — Receives the masks from JAR/SCREAM and rewrites the masked regions. Standard OpenAI image-edit API endpoint.
+- **Smart stitching** — In-house step that composites the inpainted regions back into the original image with **edge fade** so seams disappear. Lives in the GitHub notebook ([`amortegui84/comfyui-inpaint-cropstitch-nb2`](https://github.com/amortegui84/comfyui-inpaint-cropstitch-nb2)).
+- **Nano Banana** — 4K generation model. In use right now for the bags project. (Vendor / source unconfirmed — log when we find out.)
+- **Image2** — Secondary tool used with grain removal, applied when texture issues show up.
+- **NVIDIA upscaling** — Under evaluation for video + image enhancement. Not in production.
+- **ComfyUI** — Node-based stable diffusion workflow tool. The team's notebook (linked above) plugs the inpaint + crop + stitch nodes together.
+
+## Pipeline concepts
+
+- **Inpainting** — Regenerating a specific region of an image based on a mask + prompt, leaving the rest untouched. Used here for **detail recovery** (logos, stitching, textures) — not full-scene generation.
+- **Stitching** — Compositing the inpainted region back into the source image with feathered edges so the seam isn't visible.
+- **Avatar** — A brand-specific synthetic model identity. Includes a **pose library** + **lighting library** so the same avatar can render across angles without drifting.
+- **Try-on** — Rendering a garment on an avatar across multiple angles. Implemented as a **collage technique** that preserves avatar likeness when generating new views.
+- **Crop shots** — Tight image crops of product detail. Today the pipeline produces full / upper / lower body only; tighter crops need dev work.
+- **Spreadsheet logic** — The driver for batch combinations: which avatar × which garment × which pose. Pipeline reads this and queues API calls.
+- **Naming conventions** — Filename-driven contracts linking input garments to specific outputs. Each brand has its own — that's a normalization gap.
+
+## Project / business terms
+
+- **SKU** — Stock-keeping unit. A single garment variant. The team handles 200–500 per brand per delivery cycle.
+- **Tech pack** — Apparel-industry term for the full product spec sheet (measurements, materials, construction notes). The QC team's background. Influences what they look for in review.
+- **First-delivery approval rating** — % of generated images the client accepts on first review. Team target: 90%+.
+- **Creative director** — Client-side decision-maker who owns visual direction. Team executes their vision; doesn't lead creatively.
+
+## Workflow / operational terms
+
+- **Core 4 WF automation logic** — Aaron's deliverable as of 2026-05-21. Four workflow automations whose exact scope is still TBD. Likely maps to the focus areas (avatars / try-on / QC / inpainting) or to specific brand workflows. **Open question — ask Aaron.**
+- **Scenes per category** — The set of must-have shots required for each product category (e.g. for bags: front, side, back, top, diagonal × on-model + cutout). Anchor for client confirmation; downstream work (poses, spreadsheet templates) is gated on locking these in.
+- **Data requirements per category** — Nare's deliverable, due 2026-05-22 evening. Defines the input data shape per product category — what fields, what photo standards, what metadata.
+- **Spreadsheet templates for input data** — Nare's follow-up deliverable, gated on client confirmation of poses. Templates clients fill in to drive the batch combinations (avatar × garment × pose).
+- **Product UX** — Mindy + Nare's Friday (2026-05-23) walkthrough. First explicit nines-platform-side surface discussion in our thread.
+
+## Roles inside the workstream
+
+See [`people.md`](./people.md) for the human roster. Functional roles below:
+
+- **Image gen team** — Aaron + Mark + new hires. Owns the pipeline.
+- **Retouching** — Terry. Manual fixes on top of pipeline output.
+- **QC** — Heidi + Terry. Reviews every image before client delivery.
+- **Platform integration** — Eric (Nines side, currently blocked).
+- **Cloud infra** — Us (5thPivot — Lu + Luiyit).

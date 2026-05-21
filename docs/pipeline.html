@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nines Image Gen — Pipeline</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <span class="brand">Nines Image Gen<span class="brand-tag">Knowledge base</span></span>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="pipeline.html" class="active">Pipeline</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="people.html">People</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+
+<main class="page">
+
+<div class="hero">
+  <h1>Pipeline</h1>
+  <p class="lede">Aaron's auto-inpainting workflow at the core. Three focus areas wrap around it — avatars, try-on generation, and quality control. Runs locally today; target is AWS batch.</p>
+</div>
+
+<section>
+  <h2>End-to-end flow</h2>
+  <div class="pipeline">
+    <div class="pipeline-flow">
+      <div class="flow-step input">
+        <h4>Input image</h4>
+        <p>Reference photo (today often from phone — quality risk).</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step engine">
+        <h4>JAR/SCREAM</h4>
+        <p>Auto-detects objects + generates masks for the regions to enhance.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step engine">
+        <h4>OpenAI inpainting</h4>
+        <p>Rewrites masked regions with prompted detail (logos, textures, stitching).</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step engine">
+        <h4>Smart stitch</h4>
+        <p>Composes enhanced regions back into original with edge fade — no visible seam.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step output">
+        <h4>QC + retouch</h4>
+        <p>Heidi + Terry review every image. Industry tech-pack background informs.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step output">
+        <h4>Delivery</h4>
+        <p>Client (creative director). 90%+ first-pass approval bar.</p>
+      </div>
+    </div>
+  </div>
+  <p class="muted">Implementation: <a href="https://github.com/amortegui84/comfyui-inpaint-cropstitch-nb2" target="_blank">amortegui84/comfyui-inpaint-cropstitch-nb2</a> — ComfyUI notebook.</p>
+</section>
+
+<section>
+  <h2>Three focus areas</h2>
+  <div class="card-grid">
+    <div class="card-large">
+      <h3>Avatars</h3>
+      <div class="meta">Per-brand identity</div>
+      <p>Brand-specific synthetic model identity. Includes pose library and lighting library so the same avatar can render across angles without drifting.</p>
+      <h4>Setup needs</h4>
+      <ul>
+        <li>Pose library per brand</li>
+        <li>Lighting library per brand</li>
+        <li>Naming conventions (per client) link garment → avatar slot</li>
+      </ul>
+    </div>
+    <div class="card-large">
+      <h3>Try-on generation</h3>
+      <div class="meta">Garment × avatar × angle</div>
+      <p>Collage technique preserves avatar likeness across multiple angles. Spreadsheet logic drives which avatar × which garment × which pose, queues API calls.</p>
+      <h4>Known limitations</h4>
+      <ul>
+        <li>Pockets don't render correctly with hand positioning</li>
+        <li>Crop shots stuck at full / upper / lower body — anything tighter needs dev work</li>
+        <li>Color accuracy breaks with varied input lighting</li>
+      </ul>
+    </div>
+    <div class="card-large">
+      <h3>Quality control</h3>
+      <div class="meta">Every image, every time</div>
+      <p>Heidi + Terry review each generated image. Industry background in tech packs informs what they flag. Manual workflow still produces better lighting + quality than automated; automated has consistency issues.</p>
+      <h4>Surface</h4>
+      <ul>
+        <li>FigJam (being set up by Heidi for visual QA with Terry)</li>
+        <li>Terry available 8PM EST from Berlin</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Current urgent project — bags</h2>
+  <div class="card-large">
+    <h3>North Face / Vans bags</h3>
+    <div class="meta">1-month deadline · Mark 120% focused</div>
+    <p>8 bags, 7 views each (front, side, back, top, diagonal among them). Running manual + automated in parallel — manual is the source of truth for delivery; automated tested alongside.</p>
+    <h4>Tooling in use</h4>
+    <ul>
+      <li><strong>Nano Banana</strong> → 4K generation</li>
+      <li><strong>Image2</strong> with grain removal → texture issues</li>
+    </ul>
+    <h4>Active blockers</h4>
+    <ul>
+      <li>Reference photos from phone cameras → quality + proportion inconsistencies</li>
+      <li>Size accuracy critical — AI struggles with dimensional understanding of bag scale</li>
+      <li>Studio lighting + shadows + brand guidelines must match exactly</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Infrastructure today vs target</h2>
+  <table>
+    <thead><tr><th>Area</th><th>Today</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td>Runtime</td><td>APIs run locally on individual machines</td><td>AWS server for batch processing</td></tr>
+      <tr><td>API accounts</td><td>Single account per machine</td><td>Multiple accounts to handle volume</td></tr>
+      <tr><td>Throughput</td><td>~30 images per API call</td><td>2–4k images/day</td></tr>
+      <tr><td>Cost model</td><td>(ad-hoc)</td><td>$5–6k credits + cloud compute per 10k images</td></tr>
+      <tr><td>QC surface</td><td>Manual review on each image</td><td>FigJam + automated quality checks where possible</td></tr>
+      <tr><td>Platform integration</td><td>None (local tools, browser-based Nines disconnected)</td><td>Blocked on prompts + examples from Aaron + Mark</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="foot">Pipeline diagram is descriptive — see <a href="sources.html">Sources</a> for the canonical Figma board.</div>
+</main>
+</body>
+</html>

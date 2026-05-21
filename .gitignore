@@ -1,0 +1,13 @@
+# Heavy original PDFs — keep local only. Compressed copies live in sources/pdfs/
+sources/pdfs-originals/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nines Image Gen — Tracker</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <span class="brand">Nines Image Gen<span class="brand-tag">Knowledge base</span></span>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="pipeline.html">Pipeline</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="people.html">People</a>
+    <a href="tracker.html" class="active">Tracker</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+
+<main class="page">
+
+<div class="hero">
+  <h1>Tracker</h1>
+  <p class="lede">All open questions and action items aggregated across every sync. Close items by flipping status here and in the source meeting.</p>
+</div>
+
+<section>
+  <h2>Open questions</h2>
+  <table>
+    <thead><tr><th>#</th><th>Question</th><th>Source</th><th>Owner</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Cost ownership: $5–6k per 10k images in API credits + cloud compute. Who pays?</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>TBD</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>2</td><td>How are different naming conventions per brand normalized?</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>5thPivot (when shadowing)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>3</td><td>Avatar / pose library — built per brand or shared?</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>Aaron + Mark</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>4</td><td>What's genuinely automatable vs always-manual in the workflow?</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>Aaron + Mark</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>5</td><td>Does NVIDIA upscaling replace OpenAI inpainting or layer on top?</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>Aaron</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>6</td><td>How will crop shots beyond full / upper / lower body get implemented?</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td>Image gen team</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>7</td><td>When will pocket-rendering bug (hand positioning) be fixed?</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td>Image gen team</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>8</td><td>Reference photos from phone cameras break proportions — who owns input-photo standards?</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td>TBD (likely 5thPivot)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>9</td><td>What does "JAR/SCREAM model" actually refer to? Verify spelling + source.</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td>5thPivot (ask Aaron)</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>10</td><td>"Nano Banana" — what's the actual vendor / API?</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td>5thPivot (ask Mark)</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>11</td><td>What is the "core 4 WF automation logic" Aaron is building? Which 4 workflows?</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td>5thPivot (ask Aaron)</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>12</td><td>What does "scenes per category" mean concretely — examples?</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td>Nare</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>13</td><td>Where does Nare's client-questions doc live? Need link.</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td>5thPivot (ask Nare/Heidi)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>14</td><td>Data requirements per category — what shape? Schema we agree on?</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td>Nare</td><td><span class="badge badge-high">High</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Action items — open / in progress</h2>
+  <table>
+    <thead><tr><th>#</th><th>Owner</th><th>Item</th><th>Due</th><th>Source</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Aaron + Mark</td><td>Prepare process documentation (full pipeline map)</td><td>next meeting</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>2</td><td>Heidi</td><td>Set up FigJam for visual QA process with Terry</td><td>TBD</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>3</td><td>Mark</td><td>Continue bags project with new team members</td><td>ongoing</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>4</td><td>5thPivot</td><td>Test cloud deployment in parallel while manual workflow ships</td><td>ongoing</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5</td><td>Image gen team</td><td>Recruit specialists for inpainting / pose library / try-on pipeline</td><td>rolling</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>6</td><td>5thPivot (eventually)</td><td>Write input-photo standards doc for clients</td><td>TBD</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>7</td><td>Heidi + Terry</td><td>QC review every image</td><td>ongoing</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>8</td><td>Mark</td><td>Overnight prompt work for bags project</td><td>ongoing</td><td><a href="meetings.html#2026-05-21">2026-05-21</a></td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>9</td><td>Heidi</td><td>Follow up with clients on Nare's content (questions + scenes per category)</td><td>TBD</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>10</td><td>Aaron</td><td>Start core 4 workflow automation logic</td><td>started</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>11</td><td>Nare</td><td>Initial version of data requirements per category</td><td>2026-05-22 evening</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>12</td><td>Nare</td><td>Spreadsheet templates for input data</td><td>TBD</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td><span class="badge badge-blocked">Blocked</span></td></tr>
+      <tr><td>13</td><td>Mindy + Nare</td><td>Product UX walkthrough</td><td>2026-05-23 (Fri)</td><td><a href="meetings.html">2026-05-21 action plan</a></td><td><span class="badge badge-open">Scheduled</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Done</h2>
+  <table>
+    <thead><tr><th>#</th><th>Owner</th><th>Item</th><th>Closed</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>D1</td><td>Mindy</td><td>Create "Nines Grit" Slack channel + add team</td><td>2026-05-20</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td></tr>
+      <tr><td>D2</td><td>Enoc</td><td>Bring Lu into the loop (backend / cloud infra)</td><td>2026-05-21</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td></tr>
+      <tr><td>D3</td><td>5thPivot</td><td>Schedule afternoon meeting with 5thPivot, Aaron, Mark</td><td>2026-05-20</td><td><a href="meetings.html#2026-05-20">2026-05-20</a></td></tr>
+      <tr><td>D4</td><td>Nare</td><td>Draft content for client (questions + scenes per category + what's missing)</td><td>2026-05-21</td><td><a href="meetings.html">2026-05-21 action plan</a></td></tr>
+      <tr><td>D5</td><td>Nare</td><td>Share client content with Heidi</td><td>2026-05-21</td><td><a href="meetings.html">2026-05-21 action plan</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+</body>
+</html>

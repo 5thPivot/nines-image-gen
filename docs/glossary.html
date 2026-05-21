@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nines Image Gen — Glossary</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <span class="brand">Nines Image Gen<span class="brand-tag">Knowledge base</span></span>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="pipeline.html">Pipeline</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="people.html">People</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="glossary.html" class="active">Glossary</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+
+<main class="page">
+
+<div class="hero">
+  <h1>Glossary</h1>
+  <p class="lede">Vocabulary the team drops without defining. Cross-reference this when reading meetings or pipeline docs.</p>
+</div>
+
+<section>
+  <h2>Models / tools in active use</h2>
+
+  <div class="term">
+    <span class="name">JAR/SCREAM model<span class="name-tag">tool</span></span>
+    <p>Object-detection + mask-generation model Aaron uses to identify regions for inpainting. Not a brand name 5thPivot recognizes — could be a fine-tuned variant; double-check spelling with Aaron when shadowing.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">OpenAI inpainting<span class="name-tag">tool</span></span>
+    <p>Receives the masks from JAR/SCREAM and rewrites the masked regions. Standard OpenAI image-edit API endpoint.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Smart stitching<span class="name-tag">tool</span></span>
+    <p>In-house step that composites the inpainted regions back into the original image with edge fade so seams disappear. Lives in the GitHub notebook <a href="https://github.com/amortegui84/comfyui-inpaint-cropstitch-nb2" target="_blank">amortegui84/comfyui-inpaint-cropstitch-nb2</a>.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Nano Banana<span class="name-tag">tool</span></span>
+    <p>4K generation model. In use right now for the bags project. Vendor / source unconfirmed — log when 5thPivot finds out.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Image2<span class="name-tag">tool</span></span>
+    <p>Secondary tool used with grain removal, applied when texture issues show up.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">NVIDIA upscaling<span class="name-tag">tool</span></span>
+    <p>Under evaluation for video + image enhancement. Not in production yet.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">ComfyUI<span class="name-tag">framework</span></span>
+    <p>Node-based stable diffusion workflow tool. The team's notebook plugs the inpaint + crop + stitch nodes together.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Pipeline concepts</h2>
+
+  <div class="term">
+    <span class="name">Inpainting<span class="name-tag">concept</span></span>
+    <p>Regenerating a specific region of an image based on a mask + prompt, leaving the rest untouched. Used here for detail recovery (logos, stitching, textures) — not full-scene generation.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Stitching<span class="name-tag">concept</span></span>
+    <p>Compositing the inpainted region back into the source image with feathered edges so the seam isn't visible.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Avatar<span class="name-tag">concept</span></span>
+    <p>A brand-specific synthetic model identity. Includes a pose library + lighting library so the same avatar can render across angles without drifting.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Try-on<span class="name-tag">concept</span></span>
+    <p>Rendering a garment on an avatar across multiple angles. Implemented as a collage technique that preserves avatar likeness when generating new views.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Crop shots<span class="name-tag">concept</span></span>
+    <p>Tight image crops of product detail. Today the pipeline produces full / upper / lower body only; tighter crops need dev work.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Spreadsheet logic<span class="name-tag">concept</span></span>
+    <p>The driver for batch combinations: which avatar × which garment × which pose. Pipeline reads this and queues API calls.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Naming conventions<span class="name-tag">concept</span></span>
+    <p>Filename-driven contracts linking input garments to specific outputs. Each brand has its own — that's a normalization gap.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Project / business terms</h2>
+
+  <div class="term">
+    <span class="name">SKU<span class="name-tag">biz</span></span>
+    <p>Stock-keeping unit. A single garment variant. The team handles 200–500 per brand per delivery cycle.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Tech pack<span class="name-tag">biz</span></span>
+    <p>Apparel-industry term for the full product spec sheet (measurements, materials, construction notes). The QC team's background. Influences what they look for in review.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">First-delivery approval rating<span class="name-tag">biz</span></span>
+    <p>% of generated images the client accepts on first review. Team target: 90%+.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Creative director<span class="name-tag">biz</span></span>
+    <p>Client-side decision-maker who owns visual direction. Team executes their vision; doesn't lead creatively.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Workflow / operational terms</h2>
+
+  <div class="term">
+    <span class="name">Core 4 WF automation logic<span class="name-tag">workflow</span></span>
+    <p>Aaron's deliverable as of 2026-05-21. Four workflow automations whose exact scope is still TBD. Likely maps to the focus areas (avatars / try-on / QC / inpainting) or to specific brand workflows. <strong>Open question — ask Aaron.</strong></p>
+  </div>
+
+  <div class="term">
+    <span class="name">Scenes per category<span class="name-tag">workflow</span></span>
+    <p>The set of must-have shots required for each product category (e.g. for bags: front, side, back, top, diagonal × on-model + cutout). Anchor for client confirmation; downstream work (poses, spreadsheet templates) is gated on locking these in.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Data requirements per category<span class="name-tag">workflow</span></span>
+    <p>Nare's deliverable, due 2026-05-22 evening. Defines the input data shape per product category — what fields, what photo standards, what metadata.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Spreadsheet templates for input data<span class="name-tag">workflow</span></span>
+    <p>Nare's follow-up deliverable, gated on client confirmation of poses. Templates clients fill in to drive the batch combinations (avatar × garment × pose).</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Product UX<span class="name-tag">workflow</span></span>
+    <p>Mindy + Nare's Friday (2026-05-23) walkthrough. First explicit nines-platform-side surface discussion in 5thPivot's thread.</p>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

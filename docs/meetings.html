@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nines Image Gen — Meetings</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <span class="brand">Nines Image Gen<span class="brand-tag">Knowledge base</span></span>
+  <nav class="nav">
+    <a href="index.html">Overview</a>
+    <a href="pipeline.html">Pipeline</a>
+    <a href="meetings.html" class="active">Meetings</a>
+    <a href="people.html">People</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+
+<main class="page">
+
+<div class="hero">
+  <h1>Meetings</h1>
+  <p class="lede">Chronological sync notes. Each one carries decisions, open questions, action items, and raw notes. Open questions and action items are also mirrored in the <a href="tracker.html">Tracker</a>.</p>
+</div>
+
+<div class="card-large">
+  <h3>2026-05-20 — Integration kickoff with Aaron and Mark</h3>
+  <div class="meta">Tuesday · Attendees: Aaron, Mark, Mindy, Heidi, Enoc (Lu/Luiyit added afterwards via Nines Grit channel)</div>
+
+  <p>First sync where 5thPivot was pulled in. Mindy wants Aaron/Mark to work directly with 5thPivot (not Eric) on the cloud + integration plan. New <code>nines_grit</code> Slack channel created to host this workstream.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li>Image gen team will work with <strong>5thPivot directly</strong>, not via Eric.</li>
+    <li>New Slack channel <code>nines_grit</code> owns this workstream.</li>
+    <li>5thPivot's job is to <strong>shadow Aaron/Mark first</strong>, then propose AWS architecture — no premature design.</li>
+    <li><strong>Master diagram</strong> must exist before infra work — automatable vs manual, UX flow, brand-specific setup.</li>
+    <li>Cloud deployment tested <strong>in parallel</strong> with manual workflow until proven.</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Mindy</td><td>Create "Nines Grit" Slack channel</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Aaron + Mark</td><td>Prepare process documentation</td><td>next meeting</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Enoc</td><td>Bring Lu into the loop</td><td>2026-05-21</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Heidi</td><td>Set up FigJam for visual QA with Terry</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>Schedule afternoon meeting with 5thPivot, Aaron, Mark</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Mark</td><td>Continue bags project with new team members</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>5thPivot</td><td>Test cloud deployment in parallel while manual workflow ships</td><td>ongoing</td><td><span class="badge badge-open">Open</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>Cost ownership ($5–6k per 10k images) — who pays?</li>
+    <li>How are naming conventions per brand normalized?</li>
+    <li>Avatar / pose library — per brand or shared?</li>
+    <li>What's automatable vs always-manual?</li>
+    <li>NVIDIA upscaling — replace OpenAI inpainting or layer on top?</li>
+  </ul>
+
+  <h4>Notes</h4>
+  <p><strong>AI workflow:</strong> Aaron demoed automated enhancement using JAR/SCREAM. Auto-detects objects, creates masks, passes to OpenAI for inpainting, smart-stitches results back with edge fade. Process is documented in the GitHub notebook. NVIDIA upscaling under evaluation.</p>
+  <p><strong>Platform integration blockers:</strong> Eric needs more prompts + examples before wiring into Nines. Gap between powerful local tools and browser-based platform. Each brand needs manual setup — naming, category rules, avatar/pose library.</p>
+  <p><strong>Infra status:</strong> APIs run locally per machine. Need AWS for scale. Today ~30 images/call. Target 2–4k/day. Cost ballpark $5–6k for 10k images.</p>
+  <p><strong>Bags project status:</strong> Mark 120% focused, 1-month timeline. Manual + automated running in parallel — manual still produces better lighting/quality. Terry (Berlin, 8PM EST) doing retouching. Two new team members joining tomorrow 7AM.</p>
+
+  <p class="meta">Granola: <a href="https://notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b" target="_blank">notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b</a></p>
+</div>
+
+<div class="card-large">
+  <h3>2026-05-21 — Pipeline deep dive with Aaron and Mark</h3>
+  <div class="meta">Wednesday · Image gen team only — no Nines process discussion this round</div>
+
+  <p>Sync focused exclusively on the image gen team's pipeline — how it works today, what's adding people, what's broken. Nothing about Nines platform integration. Team is <strong>actively recruiting more AI image generation specialists</strong>.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li>No process changes this meeting — knowledge-transfer only.</li>
+    <li>Team is actively expanding with more AI image gen specialists (not yet introduced to 5thPivot).</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Mark</td><td>Overnight prompt work for bags project</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>Image gen team</td><td>Recruit specialists (inpainting, pose library, try-on)</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot (eventually)</td><td>Write input-photo standards doc for clients</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Heidi + Terry</td><td>QC review every image</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>How do you produce crop shots beyond full / upper / lower body?</li>
+    <li>How will pocket-rendering bug (hand positioning) be fixed?</li>
+    <li>Reference photos from phone cameras break proportions — who owns input-photo standards?</li>
+  </ul>
+
+  <h4>Notes</h4>
+  <p><strong>Pipeline overview:</strong> 3 → 8 brands. Per brand: 200–500 SKUs producing ~5,000 images + video. Three focus areas — avatars, try-on generation, QC. Clients are creative directors who lead vision; team translates, doesn't lead creatively. 90%+ first-delivery approval bar.</p>
+  <p><strong>Technical:</strong> Avatar = brand-specific poses + lighting libraries. Try-on uses collages to maintain avatar likeness across angles. Auto-inpainting recovers detail (stitching, logos, textures). Spreadsheet logic drives automated combinations. Naming conventions link garments → outputs.</p>
+  <p><strong>Limitations:</strong> Pockets don't render with hand positioning. Crop shots stuck at full/upper/lower body. Color accuracy breaks with varied input lighting.</p>
+  <p><strong>Bags project (current):</strong> 8 bags, 7 views each. Phone-camera input causes proportion issues. Nano Banana for 4K generation, Image2 with grain removal for textures.</p>
+  <p><strong>Team:</strong> Mark leads technical, works overnight on prompts. Need specialists in inpainting / pose library / try-on. QC has industry background in tech packs. Documentation needed for optimal input photo standards.</p>
+
+  <p class="meta">Granola: <a href="https://notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f" target="_blank">notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f</a></p>
+</div>
+
+<div class="card-large">
+  <h3>2026-05-21 (evening) — Action plan recap from Nare (Slack)</h3>
+  <div class="meta">Wednesday · evening · captured via Slack (no live sync — Nare posted recap + follow-up at 20:07 + 20:28)</div>
+
+  <p>Nare posted the action plan from a prior team sync 5thPivot doesn't have notes for, then followed up minutes later with a doc to share with the client. First explicit ownership split for content, automation logic, data requirements, and product UX. <strong>Nare appears for the first time</strong> in 5thPivot's context.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li>Goal right now: <strong>"lock in" the absolute must scenes per category</strong> with the client before going further. Downstream (poses, spreadsheet templates) is gated on that.</li>
+    <li>Aaron starts on the <strong>core 4 workflow automation logic</strong> in parallel — doesn't wait on client confirmation.</li>
+    <li><strong>Nare</strong> owns content for client + data requirements + (eventually) spreadsheet templates + Product UX with Mindy.</li>
+    <li><strong>Heidi</strong> is the single channel for client follow-up.</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Nare</td><td>Draft content for client (questions + scenes per category + what's missing)</td><td>2026-05-21 EOD</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Nare</td><td>Share client content with Heidi</td><td>2026-05-21 EOD</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Heidi</td><td>Follow up with clients on Nare's content</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron</td><td>Start core 4 workflow automation logic</td><td>started</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>Nare</td><td>Initial version of data requirements per category</td><td>2026-05-22 evening</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Nare</td><td>Spreadsheet templates for input data (gated on client pose confirmation)</td><td>TBD</td><td><span class="badge badge-blocked">Blocked</span></td></tr>
+      <tr><td>Mindy + Nare</td><td>Product UX walkthrough</td><td>2026-05-23 (Friday)</td><td><span class="badge badge-open">Scheduled</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>What is the "core 4 WF automation logic" Aaron is building? Which 4 workflows?</li>
+    <li>What does "scenes per category" mean concretely — examples?</li>
+    <li>Where does Nare's client-questions doc live? Need link.</li>
+    <li>Data requirements per category — what shape? Schema we agree on?</li>
+  </ul>
+
+  <h4>Sequence (gated dependencies)</h4>
+  <ol>
+    <li>Nare → client content drafted ✓</li>
+    <li>Heidi → forwards to client → waits on client confirmation of scenes/poses</li>
+    <li>(Parallel) Aaron → core 4 WF automation logic</li>
+    <li>(Parallel) Nare → data requirements per category (due 2026-05-22 evening)</li>
+    <li>Once client confirms poses → Nare builds spreadsheet templates</li>
+    <li>Mindy + Nare → Product UX walkthrough (Friday 2026-05-23)</li>
+  </ol>
+
+  <h4>Notes</h4>
+  <p><strong>What's new:</strong> Nare appears for the first time (add to roster). Aaron's "core 4 WF automation logic" is a new artifact name — unclear which 4 workflows. "Scenes per category" is the new client-side anchor — must-have shots per product category, locked in before downstream work. Product UX path opens up with Mindy + Nare on Friday — first explicit Nines-platform-side meeting in this thread.</p>
+
+  <p class="meta">Captured from Slack messages by Nare on 2026-05-21 at 20:07 and 20:28.</p>
+</div>
+
+<div class="foot">Add new meeting? Copy <code>../meetings/_template.md</code> in markdown, then mirror highlights here.</div>
+</main>
+</body>
+</html>

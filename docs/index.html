@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nines Image Gen — Overview</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <span class="brand">Nines Image Gen<span class="brand-tag">Knowledge base</span></span>
+  <nav class="nav">
+    <a href="index.html" class="active">Overview</a>
+    <a href="pipeline.html">Pipeline</a>
+    <a href="meetings.html">Meetings</a>
+    <a href="people.html">People</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="glossary.html">Glossary</a>
+    <a href="sources.html">Sources</a>
+  </nav>
+</div></header>
+
+<main class="page">
+
+<div class="hero">
+  <h1>AI-generated product imagery for high-end fashion brands</h1>
+  <p class="lede">Parallel workstream to the main Nines platform. The image generation team — led by <strong>Aaron</strong> and <strong>Mark</strong> — produces 5,000+ images per brand delivery cycle today on local machines. 5thPivot is scoping the move to AWS batch infrastructure and helping plan the Nines platform integration.</p>
+
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-num">3 → 8</div><div class="stat-label">brands in pipeline</div></div>
+    <div class="stat"><div class="stat-num">200–500</div><div class="stat-label">SKUs per brand</div></div>
+    <div class="stat"><div class="stat-num">~5,000</div><div class="stat-label">images per cycle</div></div>
+    <div class="stat"><div class="stat-num">90%+</div><div class="stat-label">first-delivery approval bar</div></div>
+    <div class="stat"><div class="stat-num">30 → 2–4k</div><div class="stat-label">images/day (target)</div></div>
+    <div class="stat"><div class="stat-num">$5–6k</div><div class="stat-label">API cost per 10k images</div></div>
+  </div>
+</div>
+
+<section>
+  <h2>Active brands</h2>
+  <p class="muted">Today the team ships imagery for these high-end clients. Each carries its own naming conventions, category rules, and avatar/pose library — that's the normalization gap.</p>
+  <div>
+    <span class="pill">North Face</span>
+    <span class="pill">Ferragamo</span>
+    <span class="pill">Timberland</span>
+    <span class="pill">Vans</span>
+  </div>
+</section>
+
+<section>
+  <h2>Status at a glance</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="meta">Pipeline understanding</div>
+      <h3>Two syncs done <span class="badge badge-progress">In progress</span></h3>
+      <p>Need a third shadow session with Aaron/Mark to verify the end-to-end flow before any infra proposal.</p>
+    </div>
+    <div class="card">
+      <div class="meta">Cloud deployment plan</div>
+      <h3>Not started <span class="badge badge-blocked">Blocked</span></h3>
+      <p>Blocked on the full process map from Aaron + Mark. Will be tested in parallel — manual workflow stays source of truth.</p>
+    </div>
+    <div class="card">
+      <div class="meta">Nines platform integration</div>
+      <h3>Blocked <span class="badge badge-blocked">Blocked</span></h3>
+      <p>Eric is waiting for prompts + examples showing how the retouching team would change logos/elements via AI masks.</p>
+    </div>
+    <div class="card">
+      <div class="meta">Tooling inventory</div>
+      <h3>Partial <span class="badge badge-open">Open</span></h3>
+      <p>JAR/SCREAM, OpenAI inpainting, smart stitch, Nano Banana, Image2, NVIDIA upscaling — see glossary. Some vendors still unconfirmed.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Where to go next</h2>
+  <div class="card-grid">
+    <a class="card" href="pipeline.html">
+      <div class="meta">Process</div>
+      <h3>Pipeline →</h3>
+      <p>Visual map: input → mask → inpaint → stitch → output. What's automatable vs manual.</p>
+    </a>
+    <a class="card" href="meetings.html">
+      <div class="meta">History</div>
+      <h3>Meetings →</h3>
+      <p>Sync notes — integration kickoff (2026-05-20) and pipeline deep dive (2026-05-21).</p>
+    </a>
+    <a class="card" href="tracker.html">
+      <div class="meta">Status</div>
+      <h3>Tracker →</h3>
+      <p>Open questions + action items aggregated across every sync.</p>
+    </a>
+    <a class="card" href="people.html">
+      <div class="meta">Roster</div>
+      <h3>People →</h3>
+      <p>Who's who across image gen team, Nines, 5thPivot, and external retouching.</p>
+    </a>
+    <a class="card" href="glossary.html">
+      <div class="meta">Vocabulary</div>
+      <h3>Glossary →</h3>
+      <p>JAR/SCREAM, Nano Banana, Image2, ComfyUI, inpainting, avatar, try-on, tech pack…</p>
+    </a>
+    <a class="card" href="sources.html">
+      <div class="meta">Raw assets</div>
+      <h3>Sources →</h3>
+      <p>Figma board, Granola recordings, training deck, GitHub notebook.</p>
+    </a>
+  </div>
+</section>
+
+<div class="foot">Last updated from <code>nines-image-gen/</code> · markdown source of truth · regenerate from there.</div>
+</main>
+</body>
+</html>
