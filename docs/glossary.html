@@ -32,13 +32,23 @@
   <h2>Models / tools in active use</h2>
 
   <div class="term">
-    <span class="name">JAR/SCREAM model<span class="name-tag">tool</span></span>
-    <p>Object-detection + mask-generation model Aaron uses to identify regions for inpainting. Not a brand name 5thPivot recognizes — could be a fine-tuned variant; double-check spelling with Aaron when shadowing.</p>
+    <span class="name">Florence<span class="name-tag">tool</span></span>
+    <p>Microsoft's vision foundation model. Handles automatic element recognition (glasses, face, upper/lower body, objects) for the inpainting pipeline. Aaron confirmed 2026-05-21. <strong>Replaces what was previously transcribed as "JAR/SCREAM"</strong> — that was a Granola mistranscription.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Fal<span class="name-tag">tool</span></span>
+    <p>Compute API running the inpainting workflows. ~30 concurrent calls per server. Sits behind the ComfyUI JSON-API export.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Replicate<span class="name-tag">tool</span></span>
+    <p>Secondary compute API used alongside Fal for workflow execution.</p>
   </div>
 
   <div class="term">
     <span class="name">OpenAI inpainting<span class="name-tag">tool</span></span>
-    <p>Receives the masks from JAR/SCREAM and rewrites the masked regions. Standard OpenAI image-edit API endpoint.</p>
+    <p>Receives the masks from Florence and rewrites the masked regions. Standard OpenAI image-edit API endpoint.</p>
   </div>
 
   <div class="term">
@@ -156,6 +166,30 @@
   <div class="term">
     <span class="name">Product UX<span class="name-tag">workflow</span></span>
     <p>Mindy + Nare's Friday (2026-05-23) walkthrough. First explicit nines-platform-side surface discussion in 5thPivot's thread.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Cloud architecture (proposed)</h2>
+
+  <div class="term">
+    <span class="name">Mini admin interface<span class="name-tag">arch</span></span>
+    <p>Separate web app (NOT inside main Nines platform initially). Upload images → S3, pick workflow, fire JSON API, watch execution history. Google auth with 3-user pilot cap.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Modular pipelines<span class="name-tag">arch</span></span>
+    <p>4 independent module APIs: <strong>try-on</strong>, <strong>inpainting</strong>, <strong>variations</strong>, <strong>upscale</strong>. Each exposes its own JSON contract; Nines workflows later call them.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">AWS on-demand server provisioning<span class="name-tag">arch</span></span>
+    <p>Spin up a per-user-session server so multiple users don't conflict on a single-user ComfyUI box. Replaces today's local-only setup.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Content-filter workaround<span class="name-tag">arch</span></span>
+    <p>Regular APIs block lingerie/swimwear. Plan: open-source models on private servers + custom fine-tuning.</p>
   </div>
 </section>
 

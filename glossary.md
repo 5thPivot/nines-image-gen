@@ -4,8 +4,10 @@ Vocabulary the image gen team drops without defining. Update as new terms surfac
 
 ## Models / tools in active use
 
-- **JAR/SCREAM model** — Object-detection + mask-generation model Aaron uses to identify regions for inpainting. Not a brand name we recognize — could be a fine-tuned variant; double-check spelling with Aaron when we shadow.
-- **OpenAI (inpainting)** — Receives the masks from JAR/SCREAM and rewrites the masked regions. Standard OpenAI image-edit API endpoint.
+- **Florence model** — Microsoft's vision foundation model. Handles automatic element recognition (glasses, face, upper/lower body, objects) for the inpainting pipeline. Aaron confirmed 2026-05-21 (cloud infra sync). **Replaces what we had been transcribing as "JAR/SCREAM"** — that was a Granola mistranscription of "Florence".
+- **Fal** — Compute API used to run the inpainting workflows. ~30 concurrent calls per server. Lives behind the ComfyUI JSON-API export.
+- **Replicate** — Secondary compute API used alongside Fal for workflow execution.
+- **OpenAI (inpainting)** — Receives the masks from Florence and rewrites the masked regions. Standard OpenAI image-edit API endpoint.
 - **Smart stitching** — In-house step that composites the inpainted regions back into the original image with **edge fade** so seams disappear. Lives in the GitHub notebook ([`amortegui84/comfyui-inpaint-cropstitch-nb2`](https://github.com/amortegui84/comfyui-inpaint-cropstitch-nb2)).
 - **Nano Banana** — 4K generation model. In use right now for the bags project. (Vendor / source unconfirmed — log when we find out.)
 - **Image2** — Secondary tool used with grain removal, applied when texture issues show up.
@@ -36,6 +38,13 @@ Vocabulary the image gen team drops without defining. Update as new terms surfac
 - **Data requirements per category** — Nare's deliverable, due 2026-05-22 evening. Defines the input data shape per product category — what fields, what photo standards, what metadata.
 - **Spreadsheet templates for input data** — Nare's follow-up deliverable, gated on client confirmation of poses. Templates clients fill in to drive the batch combinations (avatar × garment × pose).
 - **Product UX** — Mindy + Nare's Friday (2026-05-23) walkthrough. First explicit nines-platform-side surface discussion in our thread.
+
+## Cloud architecture (proposed)
+
+- **Mini admin interface** — Separate web app (NOT inside main Nines platform initially). Upload images → S3, pick workflow, fire JSON API, watch execution history. Google auth with 3-user pilot cap.
+- **Modular pipelines** — 4 independent module APIs: **try-on**, **inpainting**, **variations**, **upscale**. Each exposes its own JSON contract; Nines workflows later call them.
+- **AWS on-demand server provisioning** — Spin up a per-user-session server so multiple users don't conflict on a single-user ComfyUI box. Replaces today's local-only setup.
+- **Content-filter workaround** — Regular APIs block lingerie/swimwear. Plan: open-source models on private servers + custom fine-tuning.
 
 ## Roles inside the workstream
 

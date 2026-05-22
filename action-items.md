@@ -21,6 +21,14 @@ When an item closes, leave the row in place and flip status to `done`. Don't del
 | 11 | Nare | Initial version of data requirements per category | 2026-05-22 evening | [2026-05-21 action plan](./meetings/2026-05-21-action-plan.md) | open |
 | 12 | Nare | Spreadsheet templates for input data (gated on client pose confirmation) | TBD | [2026-05-21 action plan](./meetings/2026-05-21-action-plan.md) | blocked |
 | 13 | Mindy + Nare | Product UX walkthrough | 2026-05-23 (Friday) | [2026-05-21 action plan](./meetings/2026-05-21-action-plan.md) | scheduled |
+| 14 | 5thPivot (Lu) | Build mini admin interface (workflow management) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 15 | 5thPivot | S3 storage for input image uploads | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 16 | 5thPivot | Workflow execution via JSON APIs (Fal/Replicate-backed modules) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 17 | 5thPivot | Execution history + results tracking | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 18 | 5thPivot | Google auth (3-user pilot) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 19 | Aaron + 5thPivot | Define 4 module API contracts (try-on / inpainting / variations / upscale) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 20 | Aaron | Identify open-source models for lingerie/swimwear (private-host) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 21 | Aaron + Heidi | Decide QA approach — client selection vs pre-filtering | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
 
 ## Done
 

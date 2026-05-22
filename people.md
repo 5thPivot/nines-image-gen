@@ -4,7 +4,7 @@ Roles + time zones for everyone in the `nines_grit` workstream. Update as new pe
 
 | Name | Role | Side | Time zone / availability | Notes |
 |---|---|---|---|---|
-| **Aaron** | Image gen lead — automated workflow, JAR/SCREAM + OpenAI inpainting pipeline, **core 4 WF automation logic** | Image gen team | — | Owns the technical demo of the auto-inpainting workflow. Starting on the core 4 workflow automation logic as of 2026-05-21. |
+| **Aaron** | Image gen lead — automated workflow, Florence + OpenAI inpainting pipeline, **core 4 WF automation logic** | Image gen team | Medellín, Colombia | Owns the technical demo. Currently a **consultant restricted from touching prompts/workflows by contract conflict** with a prior employer — consults via another company to avoid talent-poaching issues. **Cannot fully transition to Nines until contract resolved.** Starting on core 4 WF automation logic as of 2026-05-21. |
 | **Nare** | Content lead — client-facing doc, scenes per category, data requirements, spreadsheet templates, Product UX with Mindy | Image gen team (?) | — | Posted the 2026-05-21 evening action plan recap on Slack. Owns the dependency chain into client confirmation. Side affiliation unconfirmed — verify. |
 | **Mark** | Image gen — prompt iteration, batch generation, currently 120% on bags project | Image gen team | works overnight | One-month deadline on bags. New team members supporting him from 2026-05-21 onward. |
 | **Heidi** | QA process owner | Nines | — | Setting up FigJam for visual QC with Terry. |

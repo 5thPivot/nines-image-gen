@@ -167,6 +167,55 @@
   <p class="meta">Captured from Slack messages by Nare on 2026-05-21 at 20:07 and 20:28.</p>
 </div>
 
+<div class="card-large">
+  <h3>2026-05-21 (afternoon) — Cloud infrastructure setup with Aaron</h3>
+  <div class="meta">Wednesday · afternoon · Attendees: Aaron, Enoc, Lu (first sync between Lu and Aaron)</div>
+
+  <p>First working session between Aaron and 5thPivot's backend lead. Aaron demoed the actual workflow (ComfyUI + Florence + Fal/Replicate). Outcome: agreed <strong>modular cloud architecture</strong>, mini admin app kept separate from main Nines platform initially.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li><strong>Modular cloud architecture</strong> — 4 pipeline modules (try-on / inpainting / variations / upscale), each behind its own JSON API.</li>
+    <li><strong>AWS on-demand server provisioning per user session</strong> — replaces single-user local servers (which conflict if shared).</li>
+    <li><strong>Mini admin interface</strong> built separately from main Nines platform initially.</li>
+    <li><strong>Google auth</strong>, 3-user pilot cap.</li>
+    <li><strong>S3</strong> for image uploads + execution history tracking.</li>
+    <li><strong>"JAR/SCREAM" was Florence all along</strong> — Granola mistranscription. Open question #9 closed.</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>5thPivot (Lu)</td><td>Build mini admin interface (workflow management)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>S3 storage for input image uploads</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>Workflow execution via JSON APIs (Fal/Replicate-backed)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>Execution history + results tracking</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>Google auth (3-user pilot)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron + 5thPivot</td><td>Define 4 module API contracts</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron</td><td>Identify open-source models for lingerie/swimwear (private-host)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron + Heidi</td><td>Decide QA approach — client selection vs pre-filtering</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>Open-source models for lingerie/swimwear — which models, where hosted?</li>
+    <li>Fine-tuning effort + cost for content-filter-friendly results?</li>
+    <li>QA approach — client picks from 25 vs pre-filter to 5 best?</li>
+    <li>Master avatar library with pose conventions — who builds, who maintains?</li>
+    <li>Aaron's contract resolution timeline — when can he fully transition?</li>
+  </ul>
+
+  <h4>Notes</h4>
+  <p><strong>Team context:</strong> Enoc introduced Lu ("AI before AI"). Aaron based in Medellín; consultant restricted by contract conflict — consults via another company to avoid talent-poaching. Cannot fully transition until resolved. Mark already on Nines team. Anchor project: 5,000-image delivery in one week.</p>
+  <p><strong>Workflow architecture:</strong> ComfyUI nodes + Florence (auto element recognition: glasses, face, upper/lower body) + auto-masking + smart crop/stitch. JSON-API export, no UI. Backed by Fal (~30 concurrent calls) and Replicate. Dockerized. Limitation: single-user servers conflict on shared use.</p>
+  <p><strong>Cloud strategy:</strong> Mini admin separate from main Nines platform. Upload to S3, fire JSON APIs, track execution history, Google auth (3-user pilot). 4 modular pipelines (try-on / inpainting / variations / upscale) connect to Nines workflows via APIs.</p>
+  <p><strong>Process challenges:</strong> Content filtering blocks lingerie/swimwear → open-source on private servers + fine-tuning. QA bottleneck: ~25 generations per 5 final images; manual review required. Data org: SKUs/categories/styles create naming-convention complexity; master avatar library with pose conventions needed.</p>
+
+  <p class="meta">Granola: <a href="https://notes.granola.ai/d/bf8caf60-ea5d-4db9-a03a-d9ec598b1a47" target="_blank">notes.granola.ai/d/bf8caf60-ea5d-4db9-a03a-d9ec598b1a47</a></p>
+</div>
+
 <div class="foot">Add new meeting? Copy <code>../meetings/_template.md</code> in markdown, then mirror highlights here.</div>
 </main>
 </body>
