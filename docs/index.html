@@ -25,7 +25,7 @@
 
 <div class="hero">
   <h1>AI-generated product imagery for high-end fashion brands</h1>
-  <p class="lede">Parallel workstream to the main Nines platform. The image generation team — led by <strong>Aaron</strong> and <strong>Mark</strong> — produces 5,000+ images per brand delivery cycle today on local machines. 5thPivot is scoping the move to AWS batch infrastructure and helping plan the Nines platform integration.</p>
+  <p class="lede">Parallel workstream to the main Nines platform. The image generation team — led by <strong>Aaron</strong> and <strong>Mark</strong> — produces 5,000+ images per brand delivery cycle today on local machines. 5thPivot is building the cloud move — <strong>Lu started AWS infra</strong> at <a href="https://github.com/5thPivot/5p-nines" target="_blank">5thPivot/5p-nines</a> — alongside planning the Nines platform integration.</p>
 
   <div class="stat-grid">
     <div class="stat"><div class="stat-num">3 → 8</div><div class="stat-label">brands in pipeline</div></div>
@@ -53,23 +53,23 @@
   <div class="card-grid">
     <div class="card">
       <div class="meta">Pipeline understanding</div>
-      <h3>Two syncs done <span class="badge badge-progress">In progress</span></h3>
-      <p>Need a third shadow session with Aaron/Mark to verify the end-to-end flow before any infra proposal.</p>
+      <h3>Three syncs done <span class="badge badge-progress">In progress</span></h3>
+      <p>Integration kickoff + pipeline deep dive + cloud infra session with Aaron. Modular cloud architecture agreed (4 modules: try-on, inpainting, variations, upscale).</p>
     </div>
     <div class="card">
       <div class="meta">Cloud deployment plan</div>
-      <h3>Not started <span class="badge badge-blocked">Blocked</span></h3>
-      <p>Blocked on the full process map from Aaron + Mark. Will be tested in parallel — manual workflow stays source of truth.</p>
+      <h3>Build started <span class="badge badge-progress">In progress</span></h3>
+      <p>Lu started AWS infrastructure at <a href="https://github.com/5thPivot/5p-nines" target="_blank">5thPivot/5p-nines</a>. Scope: mini admin app, S3 uploads, per-user-session AWS servers, Google auth (3-user pilot), JSON APIs to back each module.</p>
     </div>
     <div class="card">
       <div class="meta">Nines platform integration</div>
-      <h3>Blocked <span class="badge badge-blocked">Blocked</span></h3>
-      <p>Eric is waiting for prompts + examples showing how the retouching team would change logos/elements via AI masks.</p>
+      <h3>Decoupled <span class="badge badge-open">Open</span></h3>
+      <p>Mini admin kept separate from main Nines platform initially. Module APIs will be plugged into Nines workflows later. Eric still blocked on prompts/examples from image gen team.</p>
     </div>
     <div class="card">
       <div class="meta">Tooling inventory</div>
-      <h3>Partial <span class="badge badge-open">Open</span></h3>
-      <p>JAR/SCREAM, OpenAI inpainting, smart stitch, Nano Banana, Image2, NVIDIA upscaling — see glossary. Some vendors still unconfirmed.</p>
+      <h3>Mostly confirmed <span class="badge badge-progress">In progress</span></h3>
+      <p>Florence (was "JAR/SCREAM" — Granola mistranscription), OpenAI inpainting, smart stitch, Fal + Replicate (compute APIs), ComfyUI, Nano Banana, Image2, NVIDIA upscaling. Nano Banana vendor still unconfirmed.</p>
     </div>
   </div>
 </section>
@@ -85,7 +85,7 @@
     <a class="card" href="meetings.html">
       <div class="meta">History</div>
       <h3>Meetings →</h3>
-      <p>Sync notes — integration kickoff (2026-05-20) and pipeline deep dive (2026-05-21).</p>
+      <p>Sync notes — integration kickoff (05-20), pipeline deep dive (05-21), action plan recap (05-21), cloud infra setup with Aaron (05-21).</p>
     </a>
     <a class="card" href="tracker.html">
       <div class="meta">Status</div>
@@ -100,7 +100,7 @@
     <a class="card" href="glossary.html">
       <div class="meta">Vocabulary</div>
       <h3>Glossary →</h3>
-      <p>JAR/SCREAM, Nano Banana, Image2, ComfyUI, inpainting, avatar, try-on, tech pack…</p>
+      <p>Florence, Fal, Replicate, ComfyUI, Nano Banana, inpainting, avatar, try-on, mini admin, modular pipelines…</p>
     </a>
     <a class="card" href="sources.html">
       <div class="meta">Raw assets</div>

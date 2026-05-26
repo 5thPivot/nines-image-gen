@@ -16,7 +16,7 @@ We are NOT yet touching the Nines platform integration — that's blocked on Aar
 
 See [`people.md`](./people.md) for full roster + roles + time zones.
 
-Short version: **Aaron + Mark** drive image gen, **Heidi** owns QA, **Mindy** is Nines PM, **Eric** owns Nines platform integration, **Terry** is the Berlin retoucher, **Lu (us)** owns cloud backend, **Enoc** facilitates.
+Short version: **Aaron + Mark** drive image gen, **Nare** owns content/data/Product UX, **Heidi** owns QA, **Mindy** is Nines PM, **Eric** owns Nines platform integration, **Terry** is the Berlin retoucher, **Lu (us)** owns cloud backend (building at [5thPivot/5p-nines](https://github.com/5thPivot/5p-nines)), **Enoc** facilitates.
 
 ## Map of this repo
 
@@ -59,10 +59,10 @@ Every new meeting should follow `meetings/_template.md`. Copy it, date-prefix th
 
 | What | Where we are |
 |---|---|
-| Pipeline understanding | Two syncs done. Need third shadow session. |
-| Cloud deployment plan | Not started. Blocked on full process map from Aaron/Mark. |
-| Nines platform integration | Blocked. Eric needs prompts + examples first. |
-| Tooling inventory | Partial — see glossary. |
+| Pipeline understanding | Three syncs done (kickoff, pipeline deep dive, cloud infra with Aaron). Modular cloud architecture agreed. |
+| Cloud deployment plan | Build started — Lu owns AWS infra at [5thPivot/5p-nines](https://github.com/5thPivot/5p-nines). |
+| Nines platform integration | Decoupled — mini admin app separate from main Nines initially. Module APIs plug in later. Eric still blocked on prompts/examples. |
+| Tooling inventory | Mostly confirmed. "JAR/SCREAM" resolved to Florence. Fal + Replicate documented. Nano Banana vendor still unconfirmed. |
 
 ## Open questions surface
 
