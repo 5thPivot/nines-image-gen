@@ -193,6 +193,45 @@
   </div>
 </section>
 
+<section>
+  <h2>Workflow strategy (2026-05-28 lock-in)</h2>
+
+  <div class="term">
+    <span class="name">Hybrid workflow<span class="name-tag">strategy</span></span>
+    <p>Generation runs <strong>outside Nines</strong> (ChatGPT, Veronica Beard tool, ComfyUI). Nines stays as the <strong>client review interface</strong>. Locked in 2026-05-28 walk-through after seeing pain points of in-platform QA + lack of canonical asset store.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Canonical S3 store<span class="name-tag">strategy</span></span>
+    <p>All generated assets land in S3 (5thPivot side). Folder/key schema pending — must map to <strong>brand / SKU / angle / variation</strong>. Defined with Aaron + Mark before automation layer is built on top.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Batch-based tracking<span class="name-tag">strategy</span></span>
+    <p>Track progress at the <strong>batch</strong> level (25–50 SKUs per batch), not per-image. Decided 2026-05-28.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Pose library strategy<span class="name-tag">strategy</span></span>
+    <p>Scrape brand sites → generate a library of pose variations → client picks from our library. Don't try to match exact reference poses.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Client selection model<span class="name-tag">strategy</span></span>
+    <p>Deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched. Retouching policy: never before client selection.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Frame.io<span class="name-tag">tool</span></span>
+    <p>Under evaluation (2026-05-28) as a QC + client review tooling layer. Seat cost is the open question.</p>
+  </div>
+
+  <div class="term">
+    <span class="name">Pearlman<span class="name-tag">biz</span></span>
+    <p>Brand client used in 2026-05-28 walk-through as the live example of the current Nines client review experience.</p>
+  </div>
+</section>
+
 </main>
 </body>
 </html>

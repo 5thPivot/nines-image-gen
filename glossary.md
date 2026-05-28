@@ -45,6 +45,13 @@ Vocabulary the image gen team drops without defining. Update as new terms surfac
 - **Modular pipelines** — 4 independent module APIs: **try-on**, **inpainting**, **variations**, **upscale**. Each exposes its own JSON contract; Nines workflows later call them.
 - **AWS on-demand server provisioning** — Spin up a per-user-session server so multiple users don't conflict on a single-user ComfyUI box. Replaces today's local-only setup.
 - **Content-filter workaround** — Regular APIs block lingerie/swimwear. Plan: open-source models on private servers + custom fine-tuning.
+- **Hybrid workflow** — Generation runs **outside Nines** (ChatGPT, Veronica Beard tool, ComfyUI). Nines stays as the **client review interface**. Locked in 2026-05-28 walk-through after seeing pain points of in-platform QA.
+- **Canonical S3 store** — All generated assets land in S3 (5thPivot side). Folder/key schema pending — must map to brand / SKU / angle / variation. Defined with Aaron + Mark before automation layer is built on top.
+- **Batch-based tracking** — Track progress at the **batch** level (25–50 SKUs per batch), not per-image. Decided 2026-05-28.
+- **Pose library strategy** — Scrape brand sites → generate a library of pose variations → client picks from our library. Don't try to match exact reference poses.
+- **Client selection model** — Deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched. Retouching policy: never before selection.
+- **Frame.io** — Under evaluation (2026-05-28) as a QC + client review tooling layer. Seat cost is the open question.
+- **Pearlman** — Brand client used in 2026-05-28 walk-through as the live example of the current Nines client review experience.
 
 ## Roles inside the workstream
 

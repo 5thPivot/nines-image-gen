@@ -29,6 +29,22 @@ When an item closes, leave the row in place and flip status to `done`. Don't del
 | 19 | Aaron + 5thPivot | Define 4 module API contracts (try-on / inpainting / variations / upscale) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
 | 20 | Aaron | Identify open-source models for lingerie/swimwear (private-host) | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
 | 21 | Aaron + Heidi | Decide QA approach — client selection vs pre-filtering | TBD | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | open |
+| 22 | Nare | High-level pipeline draft in FigJam | before Fri 2026-05-29 | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 23 | All | Working session — finalize pipeline map + per-step owners | Fri 2026-05-29 | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | scheduled |
+| 24 | Elizabeth + Bitter + Nare | Define client communication guidelines (what to expect per round) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 25 | Luiyit | Decide AWS account approach (new dedicated vs Nines existing) + report back | this week | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 26 | Luiyit | Sync with Lu — define infra list to hand off to Nines team | this week | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 27 | Luiyit | Begin S3 storage layer + auto-move pipeline | after Fri session | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 28 | Luiyit | Auto-push selected/QC'd images back to Nines | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 29 | Luiyit | Comment notifier — SKU-level when client comments in Nines | ~couple of days | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 30 | Luiyit | CSV extract + spreadsheet sync (V1/V2 feedback columns per SKU) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 31 | Luiyit | Threshold-based CSV trigger (e.g. fire when 15 SKUs commented) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 32 | Luiyit + Aaron | S3 folder structure per component (avatars / poses / try-on / inpainting / QC / final) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 33 | Luiyit | Auto-create spreadsheet on client upload (Drive folders + metadata + deadline + link) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 34 | Luiyit | Input validation at upload time (resolution, required angles, naming convention) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 35 | Luiyit | Prescriptive folder structure (Round 1 / QC selected / Retouching / Final) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 36 | Luiyit | Investigate / fix broken Nines QA model (retrain per-brand or remove) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 37 | Luiyit | Regeneration trigger when client rejects an asset | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
 
 ## Done
 

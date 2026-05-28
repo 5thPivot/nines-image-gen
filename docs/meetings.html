@@ -216,6 +216,62 @@
   <p class="meta">Granola: <a href="https://notes.granola.ai/d/bf8caf60-ea5d-4db9-a03a-d9ec598b1a47" target="_blank">notes.granola.ai/d/bf8caf60-ea5d-4db9-a03a-d9ec598b1a47</a></p>
 </div>
 
+<div class="card-large">
+  <h3>2026-05-28 — Product walk-through</h3>
+  <div class="meta">Thursday · 80 min · Attendees: Luiyit, Nare ("Nari"), Mindy, Mark, Aaron, Alex, Elizabeth, Rebecca, Bitter, Katrina</div>
+
+  <p>First end-to-end pipeline walk-through with the new content lead so she can build a complete map. Anchor: deliver three brands (<strong>North Face, Vans, Timberland</strong>, ~500 SKUs) under an optimized <strong>manual</strong> workflow. Full automation deferred (~6 months out). Surfaced 14 engineering deliverables on the 5thPivot side, most committed by Luiyit on the mic.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li><strong>No full pipeline automation now</strong> — full automation ~6 months out.</li>
+    <li><strong>Hybrid workflow</strong>: generation stays outside Nines (ChatGPT, Veronica Beard tool, ComfyUI); Nines stays as the <strong>client review interface</strong>.</li>
+    <li><strong>Pose strategy</strong>: scrape brand sites → generate library of variations → client picks. Don't try to match exact reference poses.</li>
+    <li><strong>Client selection model</strong>: deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched.</li>
+    <li><strong>Batch-based tracking</strong>: 25–50 SKUs per batch, not per-image.</li>
+    <li><strong>Canonical store = S3</strong> (Luiyit on mic). Output folder structure pending with Aaron + Mark.</li>
+    <li><strong>One owner per pipeline step</strong> — data ingestion, generation, QC, retouching, delivery.</li>
+    <li>Frame.io under evaluation for QC + client review.</li>
+  </ul>
+
+  <h4>Engineering deliverables (Luiyit)</h4>
+  <table>
+    <thead><tr><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Decide AWS account approach (new dedicated vs Nines existing)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Sync with Lu — hand off Nines-side infra list</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>S3 storage layer + auto-move pipeline</td><td>after Fri session</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>S3 folder structure per component (with Aaron)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Auto-push selected/QC'd images back to Nines</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Comment notifier — SKU-level when client comments in Nines</td><td>~couple days</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>CSV extract + spreadsheet sync (V1/V2 per SKU)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Threshold-based CSV trigger (e.g. fire at 15 SKUs commented)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Auto-create spreadsheet on client upload (Drive + metadata)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Input validation at upload time</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Prescriptive folder structure (Round 1 / QC / Retouch / Final)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Investigate / fix broken Nines QA model</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Regeneration trigger when client rejects an asset</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>Is Frame.io worth the seat cost as a QC layer?</li>
+    <li>Inpainting strategy: accessories (3D scenes, bags, hats) vs apparel?</li>
+    <li>Where does QC validation logic live once generation moves out of Nines?</li>
+    <li>"Nari" vs "Nare" — same person (transcription) or distinct?</li>
+    <li>Elizabeth on this call = Vans client contact or a different Elizabeth?</li>
+  </ul>
+
+  <h4>Pain points (current workflow)</h4>
+  <p>Generation lives on individual creatives' machines — no canonical location. Client comments not synced back to assets. Nines built-in QA is broken (false fails + false passes). Naming conventions differ per brand. North Face provided a pose PDF; Vans + Timberland have no pose library.</p>
+
+  <h4>What Luiyit committed to on mic</h4>
+  <p>All generated assets will live in <strong>S3 as the canonical store</strong>. Output folder/key schema pending — defined with Aaron + Mark so it maps cleanly to brand / SKU / angle / variation. Once structure locked, layer an automated flow to move (or copy) selected images from S3 into Nines for client review — creatives keep working in their preferred tools while Nines stays the review surface. Sync with Lu today to define what 5thPivot needs from Nines on the infra side; hand off that list this week so Nines team can stand it up and share access.</p>
+
+  <p class="meta">Source: internal meeting summary (Luiyit, 2026-05-28).</p>
+</div>
+
 <div class="foot">Add new meeting? Copy <code>../meetings/_template.md</code> in markdown, then mirror highlights here.</div>
 </main>
 </body>

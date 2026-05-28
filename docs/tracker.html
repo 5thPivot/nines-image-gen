@@ -51,6 +51,12 @@
       <tr><td>17</td><td>QA approach — client picks from 25 vs pre-filter to 5 best?</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td>Aaron + Heidi</td><td><span class="badge badge-medium">Medium</span></td></tr>
       <tr><td>18</td><td>Master avatar library with pose conventions — who builds, who maintains?</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td>TBD</td><td><span class="badge badge-medium">Medium</span></td></tr>
       <tr><td>19</td><td>Aaron's contract resolution timeline — when can he fully transition to Nines?</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td>Enoc</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>20</td><td>Is Frame.io worth the seat cost as a QC layer?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>5thPivot (evaluate)</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>21</td><td>Inpainting strategy — accessories (3D scenes, bags, hats) vs apparel?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>Aaron + Mark</td><td><span class="badge badge-medium">Medium</span></td></tr>
+      <tr><td>22</td><td>Where does QC validation logic live once generation moves out of Nines?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>5thPivot + image gen team</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>23</td><td>AWS account approach — new dedicated vs Nines existing?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>Luiyit</td><td><span class="badge badge-high">High</span></td></tr>
+      <tr><td>24</td><td>"Nari" in walk-through = "Nare" (transcription variance)?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>5thPivot (verify)</td><td><span class="badge badge-low">Low</span></td></tr>
+      <tr><td>25</td><td>Elizabeth in walk-through = same Elizabeth as Vans client?</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td>5thPivot (verify)</td><td><span class="badge badge-low">Low</span></td></tr>
     </tbody>
   </table>
 </section>
@@ -91,6 +97,22 @@
       <tr><td>19</td><td>Aaron + 5thPivot</td><td>Define 4 module API contracts (try-on / inpainting / variations / upscale)</td><td>TBD</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td><span class="badge badge-open">Open</span></td></tr>
       <tr><td>20</td><td>Aaron</td><td>Identify open-source models for lingerie/swimwear (private-host)</td><td>TBD</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td><span class="badge badge-open">Open</span></td></tr>
       <tr><td>21</td><td>Aaron + Heidi</td><td>Decide QA approach — client selection vs pre-filtering</td><td>TBD</td><td><a href="meetings.html">2026-05-21 cloud infra</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>22</td><td>Nare</td><td>High-level pipeline draft in FigJam</td><td>before Fri 2026-05-29</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>23</td><td>All</td><td>Working session — finalize pipeline map + per-step owners</td><td>Fri 2026-05-29</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Scheduled</span></td></tr>
+      <tr><td>24</td><td>Elizabeth + Bitter + Nare</td><td>Define client communication guidelines</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>25</td><td>Luiyit</td><td>Decide AWS account approach (new dedicated vs Nines existing)</td><td>this week</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>26</td><td>Luiyit</td><td>Sync with Lu — hand off Nines-side infra list</td><td>this week</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>27</td><td>Luiyit</td><td>Begin S3 storage layer + auto-move pipeline</td><td>after Fri session</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>28</td><td>Luiyit</td><td>Auto-push selected/QC'd images back to Nines</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>29</td><td>Luiyit</td><td>Comment notifier — SKU-level when client comments in Nines</td><td>~couple days</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>30</td><td>Luiyit</td><td>CSV extract + spreadsheet sync (V1/V2 per SKU)</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>31</td><td>Luiyit</td><td>Threshold-based CSV trigger (e.g. 15 SKUs commented)</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>32</td><td>Luiyit + Aaron</td><td>S3 folder structure per component</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>33</td><td>Luiyit</td><td>Auto-create spreadsheet on client upload (Drive + metadata)</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>34</td><td>Luiyit</td><td>Input validation at upload time</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>35</td><td>Luiyit</td><td>Prescriptive folder structure (Round 1 / QC / Retouch / Final)</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>36</td><td>Luiyit</td><td>Investigate / fix broken Nines QA model</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>37</td><td>Luiyit</td><td>Regeneration trigger when client rejects an asset</td><td>TBD</td><td><a href="meetings.html">2026-05-28 walk-through</a></td><td><span class="badge badge-open">Open</span></td></tr>
     </tbody>
   </table>
 </section>

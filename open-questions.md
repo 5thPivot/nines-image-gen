@@ -26,6 +26,12 @@ Add new questions here AND mirror in the source meeting's notes. Close them with
 | 17 | QA approach — client picks from 25 vs pre-filter to 5 best? | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | 2026-05-21 | Aaron + Heidi | medium |
 | 18 | Master avatar library with pose conventions — who builds, who maintains? | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | 2026-05-21 | TBD | medium |
 | 19 | Aaron's contract resolution timeline — when can he fully transition to Nines? | [2026-05-21 cloud infra](./meetings/2026-05-21-cloud-infra-setup-with-aaron.md) | 2026-05-21 | Enoc | high |
+| 20 | Is Frame.io worth the seat cost as a QC layer? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us, evaluate) | medium |
+| 21 | How do we handle inpainting for accessories (3D scenes, bags, hats) vs apparel? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | Aaron + Mark | medium |
+| 22 | Where does QC validation logic live once generation moves out of Nines? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us + image gen team) | high |
+| 23 | AWS account approach — new dedicated account vs Nines existing? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | Luiyit | high |
+| 24 | "Nari" in 2026-05-28 walk-through = "Nare" (same person, transcription variance)? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us, verify) | low |
+| 25 | Elizabeth in walk-through = same Elizabeth as Vans client contact? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us, verify) | low |
 
 ## Answered
 
