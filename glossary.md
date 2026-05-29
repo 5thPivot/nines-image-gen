@@ -47,11 +47,24 @@ Vocabulary the image gen team drops without defining. Update as new terms surfac
 - **Content-filter workaround** — Regular APIs block lingerie/swimwear. Plan: open-source models on private servers + custom fine-tuning.
 - **Hybrid workflow** — Generation runs **outside Nines** (ChatGPT, Veronica Beard tool, ComfyUI). Nines stays as the **client review interface**. Locked in 2026-05-28 walk-through after seeing pain points of in-platform QA.
 - **Canonical S3 store** — All generated assets land in S3 (5thPivot side). Folder/key schema pending — must map to brand / SKU / angle / variation. Defined with Aaron + Mark before automation layer is built on top.
-- **Batch-based tracking** — Track progress at the **batch** level (25–50 SKUs per batch), not per-image. Decided 2026-05-28.
+- **Batch-based tracking** — Track progress at the **batch** level (**40–50 SKUs per batch** per Nare's 2026-05-29 session, refined from the 25–50 range floated 2026-05-28). Same humans on a batch start-to-finish to avoid handoff loss.
 - **Pose library strategy** — Scrape brand sites → generate a library of pose variations → client picks from our library. Don't try to match exact reference poses.
 - **Client selection model** — Deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched. Retouching policy: never before selection.
 - **Frame.io** — Under evaluation (2026-05-28) as a QC + client review tooling layer. Seat cost is the open question.
 - **Pearlman** — Brand client used in 2026-05-28 walk-through as the live example of the current Nines client review experience.
+
+## Workflow process + roles (Nare 2026-05-29)
+
+- **Creative technologist (CT)** — Role that runs the actual generation work (prompts, Vivian/ComfyUI workflows, variant production). Hiring target: **3–4 full-time**.
+- **Project manager (PM)** — Bridge role: owns data accuracy + coordination, reviews shared client assets, prepares CT-ready summary decks. **Essential — non-negotiable per Nare.**
+- **Two-tier QC** — **Raw AI outputs**: 70–80% accuracy acceptable. **Final retouched assets**: 100% required. Different humans / different bars.
+- **6–7 variants per asset** — Generation policy with live QC during the run.
+- **4–5 generations per pose for client selection** — What the client picks from before any retouching. Client validates pose, mood, and avatar–product relationship.
+- **5% max rejection rate** — Target if the process is followed end-to-end.
+- **Daily status cadence** — Status calls **3×/week, 10 minutes** during the manual run.
+- **`ct.nines.com`** — Enoc's proposed internal CT workflow surface. Separate from the client-facing approval interface. Frame.io-style multi-asset review on the client side. Stress-test the manual process first.
+- **Repetitive vs customized categories** — Distinction that gates template reuse. Popular categories (tops, bottoms, sneakers) get reusable Vivian/ComfyUI templates; customized categories get one-offs per brand.
+- **Per-brand background / lighting specs** — Vary by category × brand (e.g. Vans: tops ≠ bottoms; shoes distinct). Tracked separately from the global pose library.
 
 ## Roles inside the workstream
 

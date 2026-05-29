@@ -45,6 +45,14 @@ When an item closes, leave the row in place and flip status to `done`. Don't del
 | 35 | Luiyit | Prescriptive folder structure (Round 1 / QC selected / Retouching / Final) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
 | 36 | Luiyit | Investigate / fix broken Nines QA model (retrain per-brand or remove) | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
 | 37 | Luiyit | Regeneration trigger when client rejects an asset | TBD | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | open |
+| 38 | Nare | Finalize proposed pipeline structure in FigJam (input → CT prep → generation → QC → client selection → final delivery) | this week | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 39 | Hiring | Recruit 3–4 full-time creative technologists | rolling | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 40 | Hiring | Recruit / assign a dedicated project manager (data accuracy + coordination) | TBD | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 41 | Nare | Define avatar + pose libraries per brand | TBD | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 42 | Aaron + Mark | Define background/lighting specs per category × brand (Vans: tops ≠ bottoms; shoes distinct) | TBD | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 43 | CT team | Build category-specific Vivian/ComfyUI templates per brand; mark popular categories (tops, bottoms, sneakers) as reusable | TBD | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 44 | 5thPivot (Luiyit + Lu) | Scope `ct.nines.com` (internal CT workflow surface) + separate client-facing approval interface | post 2026-05-28 walk-through | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
+| 45 | All | Daily status calls 3×/week (10 min) during manual run | recurring | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | open |
 
 ## Done
 

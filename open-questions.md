@@ -32,6 +32,11 @@ Add new questions here AND mirror in the source meeting's notes. Close them with
 | 23 | AWS account approach — new dedicated account vs Nines existing? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | Luiyit | high |
 | 24 | "Nari" in 2026-05-28 walk-through = "Nare" (same person, transcription variance)? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us, verify) | low |
 | 25 | Elizabeth in walk-through = same Elizabeth as Vans client contact? | [2026-05-28 walk-through](./meetings/2026-05-28-product-walkthrough.md) | 2026-05-28 | (us, verify) | low |
+| 26 | Is the 2026-05-29 Granola session same meeting as 2026-05-28 walk-through, or a distinct follow-up? | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | 2026-05-29 | (us, verify) | low |
+| 27 | `ct.nines.com` — new subdomain, separate app, or module inside Nines? | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | 2026-05-29 | Enoc + Luiyit | high |
+| 28 | Hiring plan + budget for 3–4 full-time CTs + dedicated PM? | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | 2026-05-29 | Mindy | high |
+| 29 | Avatar / pose / background / lighting library — per brand or shared base + brand overrides? | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | 2026-05-29 | Nare + image gen team | medium |
+| 30 | Where do brand-specific Vivian/ComfyUI workflow templates live + version control? | [2026-05-29 Nare workflow](./meetings/2026-05-29-nines-product-session-nare-workflow.md) | 2026-05-29 | CT team | medium |
 
 ## Answered
 

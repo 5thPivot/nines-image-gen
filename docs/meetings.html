@@ -272,6 +272,58 @@
   <p class="meta">Source: internal meeting summary (Luiyit, 2026-05-28).</p>
 </div>
 
+<div class="card-large" id="2026-05-29">
+  <h3>2026-05-29 — Nines Product Session: manual workflow + team structure (Nare)</h3>
+  <div class="meta">Thursday · captured via Granola · presented by <strong>Nare (Nartarlamazyan)</strong> · attendees include Enoc, Luiyit, broader Nines team</div>
+
+  <p>Nare presented a comprehensive manual workflow for handling AI generation <strong>outside</strong> the platform. Centers on a dedicated creative-technologist (CT) team, batch-based processing (40–50 SKUs), category/brand-specific Vivian/ComfyUI templates, and a <strong>two-tier QC system</strong>. <strong>Enoc</strong> proposed splitting the platform: <code>ct.nines.com</code> (internal CT workflow) + a separate client-facing approval interface (Frame.io-style). Likely deeper Granola notes from the same/adjacent 2026-05-28 walk-through.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li><strong>Manual workflow stays the source of truth</strong> — stress-test requirements before any platform build.</li>
+    <li><strong>Batches of 40–50 SKUs</strong> (refined from the 25–50 floated 2026-05-28). Same humans on a batch start-to-finish.</li>
+    <li><strong>Two-tier QC:</strong> raw AI outputs 70–80% accuracy acceptable · final retouched 100% required.</li>
+    <li><strong>Client selection BEFORE retouching</strong> — pick from 4–5 generations per pose; only the selected variant gets retouched.</li>
+    <li><strong>6–7 variants per asset</strong> with live QC.</li>
+    <li>Target rejection rate <strong>≤ 5%</strong> with the process followed.</li>
+    <li>Daily coordination: status calls <strong>3×/week, 10 min</strong>.</li>
+    <li>Platform direction (Enoc): build <code>ct.nines.com</code> + separate client-facing approval surface (Frame.io-style multi-asset review).</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Nare</td><td>Finalize pipeline structure in FigJam (input → CT prep → generation → QC → client selection → final delivery)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Hiring</td><td>Recruit 3–4 full-time creative technologists</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Hiring</td><td>Recruit / assign dedicated PM (data accuracy + coordination)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Nare</td><td>Define avatar + pose libraries per brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron + Mark</td><td>Background / lighting specs per category × brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>CT team</td><td>Category-specific Vivian/ComfyUI templates per brand · reusable ones for tops/bottoms/sneakers</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot (Luiyit + Lu)</td><td>Scope <code>ct.nines.com</code> + separate client-facing approval interface</td><td>post 2026-05-28</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>All</td><td>Daily status calls 3×/week (10 min)</td><td>recurring</td><td><span class="badge badge-open">Open</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>Same meeting as 2026-05-28 walk-through, or distinct follow-up?</li>
+    <li><code>ct.nines.com</code> — new subdomain, separate app, or module inside Nines?</li>
+    <li>Hiring budget for 3–4 full-time CTs + a PM?</li>
+    <li>Avatar / pose / background / lighting library — per brand or shared base + brand overrides?</li>
+    <li>Where do brand-specific Vivian/ComfyUI workflow templates live + version control?</li>
+  </ul>
+
+  <h4>Notes</h4>
+  <p><strong>Pain points:</strong> input data unorganized + complex navigation + manual downloads; no folder logic or naming conventions from clients; multiple download/upload cycles waste time.</p>
+  <p><strong>Proposed pipeline:</strong> input data organization (auto-download) → CT prep → share with CT team → generation (brand/category workflows) → internal QC + client selection → final delivery (retouched).</p>
+  <p><strong>Team structure:</strong> 3–4 full-time CTs + dedicated PM (essential). PM owns data accuracy, client asset reviews, summary decks for CTs, team bridging. Batch model = 40–50 SKUs, same humans start-to-finish.</p>
+  <p><strong>Templates + assets:</strong> per-brand category workflows (Vivian/ComfyUI). Popular categories (tops, bottoms, sneakers) get reusable templates. Avatar + pose libraries per brand. Background/lighting varies per category × brand (Vans: tops ≠ bottoms; shoes distinct).</p>
+  <p><strong>Platform:</strong> current Nines not suitable for this workflow. Enoc proposed <code>ct.nines.com</code> internal surface + separate Frame.io-style client approval interface. Automated folder structure + naming convention handling needed. Manual process first to stress-test requirements.</p>
+
+  <p class="meta">Granola: <a href="https://notes.granola.ai/t/2b434895-0005-4e28-824d-6528e3a7f2b7-008umkv4" target="_blank">notes.granola.ai/t/2b434895-…008umkv4</a></p>
+</div>
+
 <div class="foot">Add new meeting? Copy <code>../meetings/_template.md</code> in markdown, then mirror highlights here.</div>
 </main>
 </body>
