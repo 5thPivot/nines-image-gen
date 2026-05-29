@@ -28,91 +28,112 @@
   <p class="lede">Chronological sync notes. Each one carries decisions, open questions, action items, and raw notes. Open questions and action items are also mirrored in the <a href="tracker.html">Tracker</a>.</p>
 </div>
 
-<div class="card-large">
-  <h3>2026-05-20 — Integration kickoff with Aaron and Mark</h3>
-  <div class="meta">Tuesday · Attendees: Aaron, Mark, Mindy, Heidi, Enoc (Lu/Luiyit added afterwards via Nines Grit channel)</div>
+<div class="card-large" id="2026-05-29">
+  <h3>2026-05-29 — Nines Product Session: manual workflow + team structure (Nare)</h3>
+  <div class="meta">Thursday · captured via Granola · presented by <strong>Nare (Nartarlamazyan)</strong> · attendees include Enoc, Luiyit, broader Nines team</div>
 
-  <p>First sync where 5thPivot was pulled in. Mindy wants Aaron/Mark to work directly with 5thPivot (not Eric) on the cloud + integration plan. New <code>nines_grit</code> Slack channel created to host this workstream.</p>
+  <p>Nare presented a comprehensive manual workflow for handling AI generation <strong>outside</strong> the platform. Centers on a dedicated creative-technologist (CT) team, batch-based processing (40–50 SKUs), category/brand-specific Vivian/ComfyUI templates, and a <strong>two-tier QC system</strong>. <strong>Enoc</strong> proposed splitting the platform: <code>ct.nines.com</code> (internal CT workflow) + a separate client-facing approval interface (Frame.io-style). Likely deeper Granola notes from the same/adjacent 2026-05-28 walk-through.</p>
 
   <h4>Decisions</h4>
   <ul>
-    <li>Image gen team will work with <strong>5thPivot directly</strong>, not via Eric.</li>
-    <li>New Slack channel <code>nines_grit</code> owns this workstream.</li>
-    <li>5thPivot's job is to <strong>shadow Aaron/Mark first</strong>, then propose AWS architecture — no premature design.</li>
-    <li><strong>Master diagram</strong> must exist before infra work — automatable vs manual, UX flow, brand-specific setup.</li>
-    <li>Cloud deployment tested <strong>in parallel</strong> with manual workflow until proven.</li>
+    <li><strong>Manual workflow stays the source of truth</strong> — stress-test requirements before any platform build.</li>
+    <li><strong>Batches of 40–50 SKUs</strong> (refined from the 25–50 floated 2026-05-28). Same humans on a batch start-to-finish.</li>
+    <li><strong>Two-tier QC:</strong> raw AI outputs 70–80% accuracy acceptable · final retouched 100% required.</li>
+    <li><strong>Client selection BEFORE retouching</strong> — pick from 4–5 generations per pose; only the selected variant gets retouched.</li>
+    <li><strong>6–7 variants per asset</strong> with live QC.</li>
+    <li>Target rejection rate <strong>≤ 5%</strong> with the process followed.</li>
+    <li>Daily coordination: status calls <strong>3×/week, 10 min</strong>.</li>
+    <li>Platform direction (Enoc): build <code>ct.nines.com</code> + separate client-facing approval surface (Frame.io-style multi-asset review).</li>
   </ul>
 
   <h4>Action items</h4>
   <table>
     <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Mindy</td><td>Create "Nines Grit" Slack channel</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
-      <tr><td>Aaron + Mark</td><td>Prepare process documentation</td><td>next meeting</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Enoc</td><td>Bring Lu into the loop</td><td>2026-05-21</td><td><span class="badge badge-done">Done</span></td></tr>
-      <tr><td>Heidi</td><td>Set up FigJam for visual QA with Terry</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>5thPivot</td><td>Schedule afternoon meeting with 5thPivot, Aaron, Mark</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
-      <tr><td>Mark</td><td>Continue bags project with new team members</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
-      <tr><td>5thPivot</td><td>Test cloud deployment in parallel while manual workflow ships</td><td>ongoing</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Nare</td><td>Finalize pipeline structure in FigJam (input → CT prep → generation → QC → client selection → final delivery)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Hiring</td><td>Recruit 3–4 full-time creative technologists</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Hiring</td><td>Recruit / assign dedicated PM (data accuracy + coordination)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Nare</td><td>Define avatar + pose libraries per brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Aaron + Mark</td><td>Background / lighting specs per category × brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>CT team</td><td>Category-specific Vivian/ComfyUI templates per brand · reusable ones for tops/bottoms/sneakers</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot (Luiyit + Lu)</td><td>Scope <code>ct.nines.com</code> + separate client-facing approval interface</td><td>post 2026-05-28</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>All</td><td>Daily status calls 3×/week (10 min)</td><td>recurring</td><td><span class="badge badge-open">Open</span></td></tr>
     </tbody>
   </table>
 
   <h4>Open questions raised</h4>
   <ul>
-    <li>Cost ownership ($5–6k per 10k images) — who pays?</li>
-    <li>How are naming conventions per brand normalized?</li>
-    <li>Avatar / pose library — per brand or shared?</li>
-    <li>What's automatable vs always-manual?</li>
-    <li>NVIDIA upscaling — replace OpenAI inpainting or layer on top?</li>
+    <li>Same meeting as 2026-05-28 walk-through, or distinct follow-up?</li>
+    <li><code>ct.nines.com</code> — new subdomain, separate app, or module inside Nines?</li>
+    <li>Hiring budget for 3–4 full-time CTs + a PM?</li>
+    <li>Avatar / pose / background / lighting library — per brand or shared base + brand overrides?</li>
+    <li>Where do brand-specific Vivian/ComfyUI workflow templates live + version control?</li>
   </ul>
 
   <h4>Notes</h4>
-  <p><strong>AI workflow:</strong> Aaron demoed automated enhancement using JAR/SCREAM. Auto-detects objects, creates masks, passes to OpenAI for inpainting, smart-stitches results back with edge fade. Process is documented in the GitHub notebook. NVIDIA upscaling under evaluation.</p>
-  <p><strong>Platform integration blockers:</strong> Eric needs more prompts + examples before wiring into Nines. Gap between powerful local tools and browser-based platform. Each brand needs manual setup — naming, category rules, avatar/pose library.</p>
-  <p><strong>Infra status:</strong> APIs run locally per machine. Need AWS for scale. Today ~30 images/call. Target 2–4k/day. Cost ballpark $5–6k for 10k images.</p>
-  <p><strong>Bags project status:</strong> Mark 120% focused, 1-month timeline. Manual + automated running in parallel — manual still produces better lighting/quality. Terry (Berlin, 8PM EST) doing retouching. Two new team members joining tomorrow 7AM.</p>
+  <p><strong>Pain points:</strong> input data unorganized + complex navigation + manual downloads; no folder logic or naming conventions from clients; multiple download/upload cycles waste time.</p>
+  <p><strong>Proposed pipeline:</strong> input data organization (auto-download) → CT prep → share with CT team → generation (brand/category workflows) → internal QC + client selection → final delivery (retouched).</p>
+  <p><strong>Team structure:</strong> 3–4 full-time CTs + dedicated PM (essential). PM owns data accuracy, client asset reviews, summary decks for CTs, team bridging. Batch model = 40–50 SKUs, same humans start-to-finish.</p>
+  <p><strong>Templates + assets:</strong> per-brand category workflows (Vivian/ComfyUI). Popular categories (tops, bottoms, sneakers) get reusable templates. Avatar + pose libraries per brand. Background/lighting varies per category × brand (Vans: tops ≠ bottoms; shoes distinct).</p>
+  <p><strong>Platform:</strong> current Nines not suitable for this workflow. Enoc proposed <code>ct.nines.com</code> internal surface + separate Frame.io-style client approval interface. Automated folder structure + naming convention handling needed. Manual process first to stress-test requirements.</p>
 
-  <p class="meta">Granola: <a href="https://notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b" target="_blank">notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b</a></p>
+  <p class="meta">Granola: <a href="https://notes.granola.ai/t/2b434895-0005-4e28-824d-6528e3a7f2b7-008umkv4" target="_blank">notes.granola.ai/t/2b434895-…008umkv4</a></p>
 </div>
 
 <div class="card-large">
-  <h3>2026-05-21 — Pipeline deep dive with Aaron and Mark</h3>
-  <div class="meta">Wednesday · Image gen team only — no Nines process discussion this round</div>
+  <h3>2026-05-28 — Product walk-through</h3>
+  <div class="meta">Thursday · 80 min · Attendees: Luiyit, Nare ("Nari"), Mindy, Mark, Aaron, Alex, Elizabeth, Rebecca, Bitter, Katrina</div>
 
-  <p>Sync focused exclusively on the image gen team's pipeline — how it works today, what's adding people, what's broken. Nothing about Nines platform integration. Team is <strong>actively recruiting more AI image generation specialists</strong>.</p>
+  <p>First end-to-end pipeline walk-through with the new content lead so she can build a complete map. Anchor: deliver three brands (<strong>North Face, Vans, Timberland</strong>, ~500 SKUs) under an optimized <strong>manual</strong> workflow. Full automation deferred (~6 months out). Surfaced 14 engineering deliverables on the 5thPivot side, most committed by Luiyit on the mic.</p>
 
   <h4>Decisions</h4>
   <ul>
-    <li>No process changes this meeting — knowledge-transfer only.</li>
-    <li>Team is actively expanding with more AI image gen specialists (not yet introduced to 5thPivot).</li>
+    <li><strong>No full pipeline automation now</strong> — full automation ~6 months out.</li>
+    <li><strong>Hybrid workflow</strong>: generation stays outside Nines (ChatGPT, Veronica Beard tool, ComfyUI); Nines stays as the <strong>client review interface</strong>.</li>
+    <li><strong>Pose strategy</strong>: scrape brand sites → generate library of variations → client picks. Don't try to match exact reference poses.</li>
+    <li><strong>Client selection model</strong>: deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched.</li>
+    <li><strong>Batch-based tracking</strong>: 25–50 SKUs per batch, not per-image.</li>
+    <li><strong>Canonical store = S3</strong> (Luiyit on mic). Output folder structure pending with Aaron + Mark.</li>
+    <li><strong>One owner per pipeline step</strong> — data ingestion, generation, QC, retouching, delivery.</li>
+    <li>Frame.io under evaluation for QC + client review.</li>
   </ul>
 
-  <h4>Action items</h4>
+  <h4>Engineering deliverables (Luiyit)</h4>
   <table>
-    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <thead><tr><th>Item</th><th>Due</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Mark</td><td>Overnight prompt work for bags project</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
-      <tr><td>Image gen team</td><td>Recruit specialists (inpainting, pose library, try-on)</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>5thPivot (eventually)</td><td>Write input-photo standards doc for clients</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Heidi + Terry</td><td>QC review every image</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>Decide AWS account approach (new dedicated vs Nines existing)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Sync with Lu — hand off Nines-side infra list</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>S3 storage layer + auto-move pipeline</td><td>after Fri session</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>S3 folder structure per component (with Aaron)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Auto-push selected/QC'd images back to Nines</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Comment notifier — SKU-level when client comments in Nines</td><td>~couple days</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>CSV extract + spreadsheet sync (V1/V2 per SKU)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Threshold-based CSV trigger (e.g. fire at 15 SKUs commented)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Auto-create spreadsheet on client upload (Drive + metadata)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Input validation at upload time</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Prescriptive folder structure (Round 1 / QC / Retouch / Final)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Investigate / fix broken Nines QA model</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Regeneration trigger when client rejects an asset</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
     </tbody>
   </table>
 
   <h4>Open questions raised</h4>
   <ul>
-    <li>How do you produce crop shots beyond full / upper / lower body?</li>
-    <li>How will pocket-rendering bug (hand positioning) be fixed?</li>
-    <li>Reference photos from phone cameras break proportions — who owns input-photo standards?</li>
+    <li>Is Frame.io worth the seat cost as a QC layer?</li>
+    <li>Inpainting strategy: accessories (3D scenes, bags, hats) vs apparel?</li>
+    <li>Where does QC validation logic live once generation moves out of Nines?</li>
+    <li>"Nari" vs "Nare" — same person (transcription) or distinct?</li>
+    <li>Elizabeth on this call = Vans client contact or a different Elizabeth?</li>
   </ul>
 
-  <h4>Notes</h4>
-  <p><strong>Pipeline overview:</strong> 3 → 8 brands. Per brand: 200–500 SKUs producing ~5,000 images + video. Three focus areas — avatars, try-on generation, QC. Clients are creative directors who lead vision; team translates, doesn't lead creatively. 90%+ first-delivery approval bar.</p>
-  <p><strong>Technical:</strong> Avatar = brand-specific poses + lighting libraries. Try-on uses collages to maintain avatar likeness across angles. Auto-inpainting recovers detail (stitching, logos, textures). Spreadsheet logic drives automated combinations. Naming conventions link garments → outputs.</p>
-  <p><strong>Limitations:</strong> Pockets don't render with hand positioning. Crop shots stuck at full/upper/lower body. Color accuracy breaks with varied input lighting.</p>
-  <p><strong>Bags project (current):</strong> 8 bags, 7 views each. Phone-camera input causes proportion issues. Nano Banana for 4K generation, Image2 with grain removal for textures.</p>
-  <p><strong>Team:</strong> Mark leads technical, works overnight on prompts. Need specialists in inpainting / pose library / try-on. QC has industry background in tech packs. Documentation needed for optimal input photo standards.</p>
+  <h4>Pain points (current workflow)</h4>
+  <p>Generation lives on individual creatives' machines — no canonical location. Client comments not synced back to assets. Nines built-in QA is broken (false fails + false passes). Naming conventions differ per brand. North Face provided a pose PDF; Vans + Timberland have no pose library.</p>
 
-  <p class="meta">Granola: <a href="https://notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f" target="_blank">notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f</a></p>
+  <h4>What Luiyit committed to on mic</h4>
+  <p>All generated assets will live in <strong>S3 as the canonical store</strong>. Output folder/key schema pending — defined with Aaron + Mark so it maps cleanly to brand / SKU / angle / variation. Once structure locked, layer an automated flow to move (or copy) selected images from S3 into Nines for client review — creatives keep working in their preferred tools while Nines stays the review surface. Sync with Lu today to define what 5thPivot needs from Nines on the infra side; hand off that list this week so Nines team can stand it up and share access.</p>
+
+  <p class="meta">Source: internal meeting summary (Luiyit, 2026-05-28).</p>
 </div>
 
 <div class="card-large">
@@ -217,111 +238,90 @@
 </div>
 
 <div class="card-large">
-  <h3>2026-05-28 — Product walk-through</h3>
-  <div class="meta">Thursday · 80 min · Attendees: Luiyit, Nare ("Nari"), Mindy, Mark, Aaron, Alex, Elizabeth, Rebecca, Bitter, Katrina</div>
+  <h3>2026-05-21 — Pipeline deep dive with Aaron and Mark</h3>
+  <div class="meta">Wednesday · Image gen team only — no Nines process discussion this round</div>
 
-  <p>First end-to-end pipeline walk-through with the new content lead so she can build a complete map. Anchor: deliver three brands (<strong>North Face, Vans, Timberland</strong>, ~500 SKUs) under an optimized <strong>manual</strong> workflow. Full automation deferred (~6 months out). Surfaced 14 engineering deliverables on the 5thPivot side, most committed by Luiyit on the mic.</p>
-
-  <h4>Decisions</h4>
-  <ul>
-    <li><strong>No full pipeline automation now</strong> — full automation ~6 months out.</li>
-    <li><strong>Hybrid workflow</strong>: generation stays outside Nines (ChatGPT, Veronica Beard tool, ComfyUI); Nines stays as the <strong>client review interface</strong>.</li>
-    <li><strong>Pose strategy</strong>: scrape brand sites → generate library of variations → client picks. Don't try to match exact reference poses.</li>
-    <li><strong>Client selection model</strong>: deliver 5–10 variations per SKU; client picks one per angle; only the selected variation gets retouched.</li>
-    <li><strong>Batch-based tracking</strong>: 25–50 SKUs per batch, not per-image.</li>
-    <li><strong>Canonical store = S3</strong> (Luiyit on mic). Output folder structure pending with Aaron + Mark.</li>
-    <li><strong>One owner per pipeline step</strong> — data ingestion, generation, QC, retouching, delivery.</li>
-    <li>Frame.io under evaluation for QC + client review.</li>
-  </ul>
-
-  <h4>Engineering deliverables (Luiyit)</h4>
-  <table>
-    <thead><tr><th>Item</th><th>Due</th><th>Status</th></tr></thead>
-    <tbody>
-      <tr><td>Decide AWS account approach (new dedicated vs Nines existing)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Sync with Lu — hand off Nines-side infra list</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>S3 storage layer + auto-move pipeline</td><td>after Fri session</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>S3 folder structure per component (with Aaron)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Auto-push selected/QC'd images back to Nines</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Comment notifier — SKU-level when client comments in Nines</td><td>~couple days</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>CSV extract + spreadsheet sync (V1/V2 per SKU)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Threshold-based CSV trigger (e.g. fire at 15 SKUs commented)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Auto-create spreadsheet on client upload (Drive + metadata)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Input validation at upload time</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Prescriptive folder structure (Round 1 / QC / Retouch / Final)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Investigate / fix broken Nines QA model</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Regeneration trigger when client rejects an asset</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-    </tbody>
-  </table>
-
-  <h4>Open questions raised</h4>
-  <ul>
-    <li>Is Frame.io worth the seat cost as a QC layer?</li>
-    <li>Inpainting strategy: accessories (3D scenes, bags, hats) vs apparel?</li>
-    <li>Where does QC validation logic live once generation moves out of Nines?</li>
-    <li>"Nari" vs "Nare" — same person (transcription) or distinct?</li>
-    <li>Elizabeth on this call = Vans client contact or a different Elizabeth?</li>
-  </ul>
-
-  <h4>Pain points (current workflow)</h4>
-  <p>Generation lives on individual creatives' machines — no canonical location. Client comments not synced back to assets. Nines built-in QA is broken (false fails + false passes). Naming conventions differ per brand. North Face provided a pose PDF; Vans + Timberland have no pose library.</p>
-
-  <h4>What Luiyit committed to on mic</h4>
-  <p>All generated assets will live in <strong>S3 as the canonical store</strong>. Output folder/key schema pending — defined with Aaron + Mark so it maps cleanly to brand / SKU / angle / variation. Once structure locked, layer an automated flow to move (or copy) selected images from S3 into Nines for client review — creatives keep working in their preferred tools while Nines stays the review surface. Sync with Lu today to define what 5thPivot needs from Nines on the infra side; hand off that list this week so Nines team can stand it up and share access.</p>
-
-  <p class="meta">Source: internal meeting summary (Luiyit, 2026-05-28).</p>
-</div>
-
-<div class="card-large" id="2026-05-29">
-  <h3>2026-05-29 — Nines Product Session: manual workflow + team structure (Nare)</h3>
-  <div class="meta">Thursday · captured via Granola · presented by <strong>Nare (Nartarlamazyan)</strong> · attendees include Enoc, Luiyit, broader Nines team</div>
-
-  <p>Nare presented a comprehensive manual workflow for handling AI generation <strong>outside</strong> the platform. Centers on a dedicated creative-technologist (CT) team, batch-based processing (40–50 SKUs), category/brand-specific Vivian/ComfyUI templates, and a <strong>two-tier QC system</strong>. <strong>Enoc</strong> proposed splitting the platform: <code>ct.nines.com</code> (internal CT workflow) + a separate client-facing approval interface (Frame.io-style). Likely deeper Granola notes from the same/adjacent 2026-05-28 walk-through.</p>
+  <p>Sync focused exclusively on the image gen team's pipeline — how it works today, what's adding people, what's broken. Nothing about Nines platform integration. Team is <strong>actively recruiting more AI image generation specialists</strong>.</p>
 
   <h4>Decisions</h4>
   <ul>
-    <li><strong>Manual workflow stays the source of truth</strong> — stress-test requirements before any platform build.</li>
-    <li><strong>Batches of 40–50 SKUs</strong> (refined from the 25–50 floated 2026-05-28). Same humans on a batch start-to-finish.</li>
-    <li><strong>Two-tier QC:</strong> raw AI outputs 70–80% accuracy acceptable · final retouched 100% required.</li>
-    <li><strong>Client selection BEFORE retouching</strong> — pick from 4–5 generations per pose; only the selected variant gets retouched.</li>
-    <li><strong>6–7 variants per asset</strong> with live QC.</li>
-    <li>Target rejection rate <strong>≤ 5%</strong> with the process followed.</li>
-    <li>Daily coordination: status calls <strong>3×/week, 10 min</strong>.</li>
-    <li>Platform direction (Enoc): build <code>ct.nines.com</code> + separate client-facing approval surface (Frame.io-style multi-asset review).</li>
+    <li>No process changes this meeting — knowledge-transfer only.</li>
+    <li>Team is actively expanding with more AI image gen specialists (not yet introduced to 5thPivot).</li>
   </ul>
 
   <h4>Action items</h4>
   <table>
     <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Nare</td><td>Finalize pipeline structure in FigJam (input → CT prep → generation → QC → client selection → final delivery)</td><td>this week</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Hiring</td><td>Recruit 3–4 full-time creative technologists</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Hiring</td><td>Recruit / assign dedicated PM (data accuracy + coordination)</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Nare</td><td>Define avatar + pose libraries per brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>Aaron + Mark</td><td>Background / lighting specs per category × brand</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>CT team</td><td>Category-specific Vivian/ComfyUI templates per brand · reusable ones for tops/bottoms/sneakers</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>5thPivot (Luiyit + Lu)</td><td>Scope <code>ct.nines.com</code> + separate client-facing approval interface</td><td>post 2026-05-28</td><td><span class="badge badge-open">Open</span></td></tr>
-      <tr><td>All</td><td>Daily status calls 3×/week (10 min)</td><td>recurring</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Mark</td><td>Overnight prompt work for bags project</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>Image gen team</td><td>Recruit specialists (inpainting, pose library, try-on)</td><td>rolling</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot (eventually)</td><td>Write input-photo standards doc for clients</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Heidi + Terry</td><td>QC review every image</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
     </tbody>
   </table>
 
   <h4>Open questions raised</h4>
   <ul>
-    <li>Same meeting as 2026-05-28 walk-through, or distinct follow-up?</li>
-    <li><code>ct.nines.com</code> — new subdomain, separate app, or module inside Nines?</li>
-    <li>Hiring budget for 3–4 full-time CTs + a PM?</li>
-    <li>Avatar / pose / background / lighting library — per brand or shared base + brand overrides?</li>
-    <li>Where do brand-specific Vivian/ComfyUI workflow templates live + version control?</li>
+    <li>How do you produce crop shots beyond full / upper / lower body?</li>
+    <li>How will pocket-rendering bug (hand positioning) be fixed?</li>
+    <li>Reference photos from phone cameras break proportions — who owns input-photo standards?</li>
   </ul>
 
   <h4>Notes</h4>
-  <p><strong>Pain points:</strong> input data unorganized + complex navigation + manual downloads; no folder logic or naming conventions from clients; multiple download/upload cycles waste time.</p>
-  <p><strong>Proposed pipeline:</strong> input data organization (auto-download) → CT prep → share with CT team → generation (brand/category workflows) → internal QC + client selection → final delivery (retouched).</p>
-  <p><strong>Team structure:</strong> 3–4 full-time CTs + dedicated PM (essential). PM owns data accuracy, client asset reviews, summary decks for CTs, team bridging. Batch model = 40–50 SKUs, same humans start-to-finish.</p>
-  <p><strong>Templates + assets:</strong> per-brand category workflows (Vivian/ComfyUI). Popular categories (tops, bottoms, sneakers) get reusable templates. Avatar + pose libraries per brand. Background/lighting varies per category × brand (Vans: tops ≠ bottoms; shoes distinct).</p>
-  <p><strong>Platform:</strong> current Nines not suitable for this workflow. Enoc proposed <code>ct.nines.com</code> internal surface + separate Frame.io-style client approval interface. Automated folder structure + naming convention handling needed. Manual process first to stress-test requirements.</p>
+  <p><strong>Pipeline overview:</strong> 3 → 8 brands. Per brand: 200–500 SKUs producing ~5,000 images + video. Three focus areas — avatars, try-on generation, QC. Clients are creative directors who lead vision; team translates, doesn't lead creatively. 90%+ first-delivery approval bar.</p>
+  <p><strong>Technical:</strong> Avatar = brand-specific poses + lighting libraries. Try-on uses collages to maintain avatar likeness across angles. Auto-inpainting recovers detail (stitching, logos, textures). Spreadsheet logic drives automated combinations. Naming conventions link garments → outputs.</p>
+  <p><strong>Limitations:</strong> Pockets don't render with hand positioning. Crop shots stuck at full/upper/lower body. Color accuracy breaks with varied input lighting.</p>
+  <p><strong>Bags project (current):</strong> 8 bags, 7 views each. Phone-camera input causes proportion issues. Nano Banana for 4K generation, Image2 with grain removal for textures.</p>
+  <p><strong>Team:</strong> Mark leads technical, works overnight on prompts. Need specialists in inpainting / pose library / try-on. QC has industry background in tech packs. Documentation needed for optimal input photo standards.</p>
 
-  <p class="meta">Granola: <a href="https://notes.granola.ai/t/2b434895-0005-4e28-824d-6528e3a7f2b7-008umkv4" target="_blank">notes.granola.ai/t/2b434895-…008umkv4</a></p>
+  <p class="meta">Granola: <a href="https://notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f" target="_blank">notes.granola.ai/d/b757bb04-a5b5-431b-93fe-cd64ba4de57f</a></p>
+</div>
+
+<div class="card-large">
+  <h3>2026-05-20 — Integration kickoff with Aaron and Mark</h3>
+  <div class="meta">Tuesday · Attendees: Aaron, Mark, Mindy, Heidi, Enoc (Lu/Luiyit added afterwards via Nines Grit channel)</div>
+
+  <p>First sync where 5thPivot was pulled in. Mindy wants Aaron/Mark to work directly with 5thPivot (not Eric) on the cloud + integration plan. New <code>nines_grit</code> Slack channel created to host this workstream.</p>
+
+  <h4>Decisions</h4>
+  <ul>
+    <li>Image gen team will work with <strong>5thPivot directly</strong>, not via Eric.</li>
+    <li>New Slack channel <code>nines_grit</code> owns this workstream.</li>
+    <li>5thPivot's job is to <strong>shadow Aaron/Mark first</strong>, then propose AWS architecture — no premature design.</li>
+    <li><strong>Master diagram</strong> must exist before infra work — automatable vs manual, UX flow, brand-specific setup.</li>
+    <li>Cloud deployment tested <strong>in parallel</strong> with manual workflow until proven.</li>
+  </ul>
+
+  <h4>Action items</h4>
+  <table>
+    <thead><tr><th>Owner</th><th>Item</th><th>Due</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Mindy</td><td>Create "Nines Grit" Slack channel</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Aaron + Mark</td><td>Prepare process documentation</td><td>next meeting</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>Enoc</td><td>Bring Lu into the loop</td><td>2026-05-21</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Heidi</td><td>Set up FigJam for visual QA with Terry</td><td>TBD</td><td><span class="badge badge-open">Open</span></td></tr>
+      <tr><td>5thPivot</td><td>Schedule afternoon meeting with 5thPivot, Aaron, Mark</td><td>2026-05-20</td><td><span class="badge badge-done">Done</span></td></tr>
+      <tr><td>Mark</td><td>Continue bags project with new team members</td><td>ongoing</td><td><span class="badge badge-progress">In progress</span></td></tr>
+      <tr><td>5thPivot</td><td>Test cloud deployment in parallel while manual workflow ships</td><td>ongoing</td><td><span class="badge badge-open">Open</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Open questions raised</h4>
+  <ul>
+    <li>Cost ownership ($5–6k per 10k images) — who pays?</li>
+    <li>How are naming conventions per brand normalized?</li>
+    <li>Avatar / pose library — per brand or shared?</li>
+    <li>What's automatable vs always-manual?</li>
+    <li>NVIDIA upscaling — replace OpenAI inpainting or layer on top?</li>
+  </ul>
+
+  <h4>Notes</h4>
+  <p><strong>AI workflow:</strong> Aaron demoed automated enhancement using JAR/SCREAM. Auto-detects objects, creates masks, passes to OpenAI for inpainting, smart-stitches results back with edge fade. Process is documented in the GitHub notebook. NVIDIA upscaling under evaluation.</p>
+  <p><strong>Platform integration blockers:</strong> Eric needs more prompts + examples before wiring into Nines. Gap between powerful local tools and browser-based platform. Each brand needs manual setup — naming, category rules, avatar/pose library.</p>
+  <p><strong>Infra status:</strong> APIs run locally per machine. Need AWS for scale. Today ~30 images/call. Target 2–4k/day. Cost ballpark $5–6k for 10k images.</p>
+  <p><strong>Bags project status:</strong> Mark 120% focused, 1-month timeline. Manual + automated running in parallel — manual still produces better lighting/quality. Terry (Berlin, 8PM EST) doing retouching. Two new team members joining tomorrow 7AM.</p>
+
+  <p class="meta">Granola: <a href="https://notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b" target="_blank">notes.granola.ai/d/a9191175-c32d-4c81-b946-05157e91ec3b</a></p>
 </div>
 
 <div class="foot">Add new meeting? Copy <code>../meetings/_template.md</code> in markdown, then mirror highlights here.</div>
